@@ -2,7 +2,8 @@ package com.news.today.todayinformation;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
+import com.news.today.todayinformation.mvp.view.LifeCircleMvpActivity;
 
 import butterknife.ButterKnife;
 
@@ -10,7 +11,7 @@ import butterknife.ButterKnife;
  * Created by anson on 2018/7/14.
  */
 
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends LifeCircleMvpActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
