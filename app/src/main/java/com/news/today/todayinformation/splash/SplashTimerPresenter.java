@@ -1,6 +1,5 @@
-package com.news.today.todayinformation;
+package com.news.today.todayinformation.splash;
 
-import com.news.today.todayinformation.mvp.ISplashActivityContract;
 import com.news.today.todayinformation.mvp.base.BaseMvpPresenter;
 
 /**

@@ -1,4 +1,4 @@
-package com.news.today.todayinformation;
+package com.news.today.todayinformation.base;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

@@ -1,13 +1,15 @@
-package com.news.today.todayinformation;
+package com.news.today.todayinformation.splash;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.news.today.todayinformation.mvp.ISplashActivityContract;
+import com.news.today.todayinformation.base.BaseActivity;
+import com.news.today.todayinformation.main.MainActivity;
+import com.news.today.todayinformation.R;
+import com.news.today.todayinformation.base.ViewInject;
 
 import java.io.File;
 
@@ -26,8 +28,7 @@ public class SplashActivity extends BaseActivity implements ISplashActivityContr
     private ISplashActivityContract.IPresenter timerPresenter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void afterBindView() {
         initTimerPresenter();
         initListener();
         initVideo();
@@ -71,8 +72,4 @@ public class SplashActivity extends BaseActivity implements ISplashActivityContr
         mTvTimer.setText(s);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 }

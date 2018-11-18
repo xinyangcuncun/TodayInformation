@@ -1,4 +1,4 @@
-package com.news.today.todayinformation;
+package com.news.today.todayinformation.splash;
 
 import android.os.Handler;
 
