@@ -7,6 +7,7 @@
 
 
     <TextView
+        android:id="@+id/tv_position"
         android:gravity="center"
         android:text="上海"
         android:layout_width="match_parent"

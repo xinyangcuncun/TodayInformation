@@ -12,6 +12,7 @@ import android.widget.RadioGroup;
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseActivity;
 import com.news.today.todayinformation.base.ViewInject;
+import com.news.today.todayinformation.main.tools.MainConstantTool;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -45,6 +46,44 @@ public class MainActivity extends BaseActivity implements IMainActivityContract.
     public void afterBindView() {
         initHomeFragment();
         changeAnima(rgMainBottom,rgMainTop);
+        initCheckListener();
+    }
+
+    private void initCheckListener() {
+        rbMainShanghai.setChecked(true);
+        rgMainTop.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == mPresenter.getCurrentCheckedId()) {
+                    return;
+                }
+                switch (checkedId) {
+                    case R.id.rb_main_shanghai:
+                        mPresenter.replaceFragment(MainConstantTool.SHANGHAI);
+                        break;
+                    case R.id.rb_main_hangzhou:
+                        mPresenter.replaceFragment(MainConstantTool.HANGZHOU);
+                        break;
+                }
+            }
+        });
+
+        rgMainBottom.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == mPresenter.getCurrentCheckedId()) {
+                    return;
+                }
+                switch (checkedId) {
+                    case R.id.rb_main_nav_home_beijing:
+                        mPresenter.replaceFragment(MainConstantTool.BEIJING);
+                        break;
+                    case R.id.rb_main_nav_car_source_shenzhen:
+                        mPresenter.replaceFragment(MainConstantTool.SHENZHEN);
+                        break;
+                }
+            }
+        });
     }
 
     //初始化 Fragment
@@ -60,10 +99,34 @@ public class MainActivity extends BaseActivity implements IMainActivityContract.
                 isChangeTopOrBottom = !isChangeTopOrBottom;
                 if (isChangeTopOrBottom) {
                     changeAnima(rgMainTop,rgMainBottom);
+                    handleTopPosition();
                 } else {
                     changeAnima(rgMainBottom,rgMainTop);
+                    handleBottomPosition();
                 }
                 break;
+        }
+    }
+
+    //北京 深圳
+    private void handleBottomPosition() {
+        if (mPresenter.getTopPosition() != 1) {
+            mPresenter.replaceFragment(0);
+            rbMainShanghai.setChecked(true);
+        }else {
+            mPresenter.replaceFragment(1);
+            rbMainHangzhou.setChecked(true);
+        }
+    }
+
+    //上海 杭州
+    private void handleTopPosition() {
+        if (mPresenter.getBottomPosition() != 3) {
+            mPresenter.replaceFragment(2);
+            rbMainNavHomeBeijing.setChecked(true);
+        }else {
+            mPresenter.replaceFragment(3);
+            rbMainNavCarSourceShenzhen.setChecked(true);
         }
     }
 

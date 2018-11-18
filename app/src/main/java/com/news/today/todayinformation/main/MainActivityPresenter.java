@@ -4,10 +4,10 @@ package com.news.today.todayinformation.main;
 import android.support.v4.app.Fragment;
 
 import com.news.today.todayinformation.R;
-import com.news.today.todayinformation.main.shanghai.BeiJingFragment;
-import com.news.today.todayinformation.main.shanghai.HangZhowFragment;
+import com.news.today.todayinformation.main.beijing.BeiJingFragment;
+import com.news.today.todayinformation.main.hangzhou.HangZhowFragment;
 import com.news.today.todayinformation.main.shanghai.ShangHaiFragment;
-import com.news.today.todayinformation.main.shanghai.ShenZhenFragment;
+import com.news.today.todayinformation.main.shenzhen.ShenZhenFragment;
 import com.news.today.todayinformation.mvp.base.BaseMvpPresenter;
 
 /**
@@ -19,6 +19,8 @@ public class MainActivityPresenter extends BaseMvpPresenter<IMainActivityContrac
     private int mCurrentFragmentIndex;
     private Fragment[] mFragments = new Fragment[4];
     private int mCurrentCheckedId;
+    private int mTopPosition;
+    private int mBottomPositon;
 
     public MainActivityPresenter(IMainActivityContract.Iview view) {
         super(view);
@@ -35,8 +37,14 @@ public class MainActivityPresenter extends BaseMvpPresenter<IMainActivityContrac
         replaceFragment(mCurrentFragmentIndex);
     }
 
+    @Override
+    public int getCurrentCheckedId() {
+        return mCurrentCheckedId;
+    }
+
     //切换Fragment的 方法
-    private void replaceFragment(int mCurrentFragmentIndex) {
+    @Override
+    public void replaceFragment(int mCurrentFragmentIndex) {
         for (int i = 0; i < mFragments.length; i++) {
             if (mCurrentFragmentIndex != i) {
                 if (mFragments[i] != null) {
@@ -56,21 +64,40 @@ public class MainActivityPresenter extends BaseMvpPresenter<IMainActivityContrac
 
     }
 
+    @Override
+    public int getCurrentCheckedIndex() {
+        return mCurrentFragmentIndex;
+    }
+
+    @Override
+    public int getTopPosition() {
+        return mTopPosition;
+    }
+
+    @Override
+    public int getBottomPosition() {
+        return mBottomPositon;
+    }
+
     // 记录当前 角标
     private void setCurChecked(int mCurrentFragmentIndex) {
         this.mCurrentFragmentIndex = mCurrentFragmentIndex;
         switch (mCurrentFragmentIndex) {
             case 0:
                 mCurrentCheckedId = R.id.rb_main_shanghai;
+                mTopPosition = 0;
                 break;
             case 1:
                 mCurrentCheckedId = R.id.rb_main_hangzhou;
+                mTopPosition = 1;
                 break;
             case 2:
                 mCurrentCheckedId = R.id.rb_main_nav_home_beijing;
+                mBottomPositon = 2;
                 break;
             case 3:
                 mCurrentCheckedId = R.id.rb_main_nav_car_source_shenzhen;
+                mBottomPositon = 3;
                 break;
         }
     }
