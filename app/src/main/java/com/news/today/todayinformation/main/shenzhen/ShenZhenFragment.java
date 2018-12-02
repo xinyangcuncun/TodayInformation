@@ -11,7 +11,7 @@ import butterknife.BindView;
 /**
  * Created by anson on 2018/11/18.
  */
-@ViewInject(mainlayoutid = R.layout.fragment_shanghai)
+@ViewInject(mainlayoutid = R.layout.fragment_others)
 public class ShenZhenFragment extends BaseFragment{
     @BindView(R.id.tv_position)
     TextView tvPosition;

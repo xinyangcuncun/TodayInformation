@@ -119,7 +119,7 @@ public class MainActivity extends BaseActivity implements IMainActivityContract.
         }
     }
 
-    //上海 杭州
+    //shanghai 杭州
     private void handleTopPosition() {
         if (mPresenter.getBottomPosition() != 3) {
             mPresenter.replaceFragment(2);

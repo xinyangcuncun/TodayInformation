@@ -1,16 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.design.widget.CoordinatorLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/tv_position"
-        android:gravity="center"
-        android:text="上海"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/shanghai_app_barlayot"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content">
 
-</LinearLayout>
+        <android.support.design.widget.CollapsingToolbarLayout
+            app:contentScrim="@color/colorPrimaryDark"
+            app:layout_scrollFlags="scroll|snap|enterAlways|exitUntilCollapsed"
+            android:id="@+id/shanghai_collapsingtoolbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.6"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/shanghai"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <android.support.v7.widget.Toolbar
+                app:layout_collapseMode="pin"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+                <TextView
+                    android:id="@+id/tv_shanghai_welcome"
+                    android:textColor="@color/color_ffffff"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="上海欢迎您"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </android.support.v7.widget.Toolbar>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@color/color_ADADAD"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" /> <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" /> <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" /> <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" /> <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" /> <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" /> <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" /> <TextView
+            android:textColor="@color/color_ffffff"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="上海"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+            <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" /> <TextView
+            android:textColor="@color/color_ffffff"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="上海"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+            <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" /> <TextView
+            android:textColor="@color/color_ffffff"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="上海"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+            <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" /> <TextView
+            android:textColor="@color/color_ffffff"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="上海"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+            <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" /> <TextView
+            android:textColor="@color/color_ffffff"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="上海"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+            <TextView
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="上海"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" /> <TextView
+            android:textColor="@color/color_ffffff"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="上海"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</android.support.design.widget.CoordinatorLayout>
