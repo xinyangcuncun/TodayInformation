@@ -12,8 +12,7 @@ import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
 import com.news.today.todayinformation.main.shanghai.adapter.ShanghaiAdapter;
-
-import java.util.ArrayList;
+import com.news.today.todayinformation.main.shanghai.dto.ShanghaiDataManager;
 
 import butterknife.BindView;
 
@@ -40,11 +39,7 @@ public class ShangHaiFragment extends BaseFragment {
 
     private void initRecyclerView() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        ArrayList<String> data = new ArrayList<>();
-        for (int i = 0; i < 15; i++) {
-            data.add("上海市欢迎您");
-        }
-        mRecyclerView.setAdapter(new ShanghaiAdapter(data));
+        mRecyclerView.setAdapter(new ShanghaiAdapter(mContext, ShanghaiDataManager.getData()));
     }
 
     private void initListener() {
