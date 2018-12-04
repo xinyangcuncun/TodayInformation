@@ -2,6 +2,8 @@ package com.news.today.todayinformation.main.shanghai;
 
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -9,6 +11,9 @@ import android.widget.TextView;
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
+import com.news.today.todayinformation.main.shanghai.adapter.ShanghaiAdapter;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 
@@ -24,9 +29,25 @@ public class ShangHaiFragment extends BaseFragment {
     CollapsingToolbarLayout shanghaiCollapsingtoolbarlayout;
     @BindView(R.id.shanghai_app_barlayot)
     AppBarLayout shanghaiAppBarlayot;
+    @BindView(R.id.shanghai_recyclerview)
+    RecyclerView mRecyclerView;
 
     @Override
     public void afterBindView() {
+        initRecyclerView();
+        initListener();
+    }
+
+    private void initRecyclerView() {
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+        ArrayList<String> data = new ArrayList<>();
+        for (int i = 0; i < 15; i++) {
+            data.add("上海市欢迎您");
+        }
+        mRecyclerView.setAdapter(new ShanghaiAdapter(data));
+    }
+
+    private void initListener() {
         shanghaiAppBarlayot.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
