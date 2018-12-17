@@ -39,7 +39,7 @@ public class ShangHaiFragment extends BaseFragment {
 
     private void initRecyclerView() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        mRecyclerView.setAdapter(new ShanghaiAdapter(mContext, ShanghaiDataManager.getData(),false));
+        mRecyclerView.setAdapter(new ShanghaiAdapter(getActivity(), ShanghaiDataManager.getData(),false));
     }
 
     private void initListener() {
