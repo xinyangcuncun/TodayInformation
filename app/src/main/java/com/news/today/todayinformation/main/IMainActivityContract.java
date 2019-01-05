@@ -2,9 +2,9 @@ package com.news.today.todayinformation.main;
 
 import android.support.v4.app.Fragment;
 
-import com.news.today.todayinformation.mvp.ILifeCircle;
-import com.news.today.todayinformation.mvp.IMvpView;
-import com.news.today.todayinformation.mvp.MvpControler;
+import com.anson.abc.mvp.mvp.ILifeCircle;
+import com.anson.abc.mvp.mvp.IMvpView;
+import com.anson.abc.mvp.mvp.MvpControler;
 
 /**
  * Created by anson on 2018/10/28.

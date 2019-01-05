@@ -1,4 +1,4 @@
-package com.news.today.todayinformation.mvp;
+package com.anson.abc.mvp.mvp;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,6 +1,6 @@
 package com.news.today.todayinformation.splash;
 
-import com.news.today.todayinformation.mvp.base.BaseMvpPresenter;
+import com.anson.abc.mvp.mvp.base.BaseMvpPresenter;
 
 /**
  * Created by anson on 2018/10/13.

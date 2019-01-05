@@ -1,12 +1,12 @@
-package com.news.today.todayinformation.mvp.view;
+package com.anson.abc.mvp.mvp.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.news.today.todayinformation.mvp.IMvpView;
-import com.news.today.todayinformation.mvp.MvpControler;
+import com.anson.abc.mvp.mvp.IMvpView;
+import com.anson.abc.mvp.mvp.MvpControler;
 
 /**
  * Created by anson on 2018/10/28.

@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.news.today.todayinformation.mvp.view.LifeCircleMvpFragment;
+import com.anson.abc.mvp.mvp.view.LifeCircleMvpFragment;
 
 import butterknife.ButterKnife;
 

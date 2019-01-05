@@ -8,7 +8,7 @@ import com.news.today.todayinformation.main.beijing.BeiJingFragment;
 import com.news.today.todayinformation.main.hangzhou.HangZhowFragment;
 import com.news.today.todayinformation.main.shanghai.ShangHaiFragment;
 import com.news.today.todayinformation.main.shenzhen.ShenZhenFragment;
-import com.news.today.todayinformation.mvp.base.BaseMvpPresenter;
+import com.anson.abc.mvp.mvp.base.BaseMvpPresenter;
 
 /**
  * Created by anson on 2018/11/11.

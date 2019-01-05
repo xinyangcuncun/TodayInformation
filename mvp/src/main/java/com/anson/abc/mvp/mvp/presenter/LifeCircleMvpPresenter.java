@@ -1,8 +1,8 @@
-package com.news.today.todayinformation.mvp.presenter;
+package com.anson.abc.mvp.mvp.presenter;
 
-import com.news.today.todayinformation.mvp.ILifeCircle;
-import com.news.today.todayinformation.mvp.IMvpView;
-import com.news.today.todayinformation.mvp.MvpControler;
+import com.anson.abc.mvp.mvp.ILifeCircle;
+import com.anson.abc.mvp.mvp.IMvpView;
+import com.anson.abc.mvp.mvp.MvpControler;
 
 import java.lang.ref.WeakReference;
 

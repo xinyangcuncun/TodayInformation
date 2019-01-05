@@ -1,10 +1,10 @@
-package com.news.today.todayinformation.mvp.base;
+package com.anson.abc.mvp.mvp.base;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.news.today.todayinformation.mvp.IMvpView;
-import com.news.today.todayinformation.mvp.presenter.LifeCircleMvpPresenter;
+import com.anson.abc.mvp.mvp.IMvpView;
+import com.anson.abc.mvp.mvp.presenter.LifeCircleMvpPresenter;
 
 /**
  * Created by anson on 2018/10/28. p层的中间类

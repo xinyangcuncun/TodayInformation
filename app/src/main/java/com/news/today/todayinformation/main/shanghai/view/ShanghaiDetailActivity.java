@@ -19,6 +19,7 @@ import java.io.IOException;
 import butterknife.BindView;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.FormBody;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -37,7 +38,30 @@ public class ShanghaiDetailActivity extends BaseActivity {
     @Override
     public void afterBindView() {
         initAnima();
-        initGetNetData();
+//        initGetNetData();
+        initPostNetData();
+    }
+
+    private void initPostNetData() {
+        OkHttpClient client = new OkHttpClient(); // okhttp 配置一些默认
+        FormBody.Builder builder = new FormBody.Builder();
+        builder.add("key", "0f08cd674792667feb5ce236ea028747");
+        Request request = new Request.Builder()
+                .url("http://apis.juhe.cn/lottery/types")
+                .post(builder.build())
+                .build(); //建造者设计模式
+        Call call = client.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.e("initGetNetData","onFailure" + e);
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Log.e("initGetNetData","onResponse" + response.body().string());
+            }
+        });
     }
 
     /**
