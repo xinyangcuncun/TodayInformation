@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseActivity;
 import com.news.today.todayinformation.base.ViewInject;
+import com.news.today.todayinformation.main.shanghai.module.ShangHaiDetailHttpTask;
 
 import java.io.IOException;
 
@@ -20,7 +21,6 @@ import butterknife.BindView;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
-import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -38,8 +38,8 @@ public class ShanghaiDetailActivity extends BaseActivity {
     @Override
     public void afterBindView() {
         initAnima();
-//        initGetNetData();
-        initPostNetData();
+        initGetNetData();
+//        initPostNetData();
     }
 
     private void initPostNetData() {
@@ -68,18 +68,24 @@ public class ShanghaiDetailActivity extends BaseActivity {
      * 发送网络请求数据
      */
     private void initGetNetData() {
+        Object desc = new ShangHaiDetailHttpTask().getXiaoHuaList("desc", "1", "1");
+        /*//1、 可以隔离
         OkHttpClient client = new OkHttpClient(); // okhttp 配置一些默认
+        //2、构建请求 1）url 2）参数
         HttpUrl.Builder builder = HttpUrl.parse("http://v.juhe.cn/joke/content/list.php").newBuilder();
         builder.addQueryParameter("sort", "desc");
         builder.addQueryParameter("page", "1");
-        builder.addQueryParameter("pagesize", "2");
+        builder.addQueryParameter("pagesize", "1");
         builder.addQueryParameter("time", "" + System.currentTimeMillis()/1000);
         builder.addQueryParameter("key", "bbc57dd5e4f05991aff09eafd2e667e0");
+        //3、构建Request
         Request request = new Request.Builder()
                 .url(builder.build())
                 .get()
                 .build(); //建造者设计模式
+        //4、构建Call
         Call call = client.newCall(request);
+        //5 执行网络请求
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -90,7 +96,7 @@ public class ShanghaiDetailActivity extends BaseActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 Log.e("initGetNetData","onResponse" + response.body().string());
             }
-        });
+        });*/
     }
 
     private void initAnima() {
