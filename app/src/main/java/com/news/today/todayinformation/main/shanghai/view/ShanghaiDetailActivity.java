@@ -69,6 +69,10 @@ public class ShanghaiDetailActivity extends BaseActivity {
      */
     private void initGetNetData() {
         Object desc = new ShangHaiDetailHttpTask().getXiaoHuaList("desc", "1", "1");
+        if (desc instanceof Response) {
+            Response response = (Response) desc;
+            Log.e("initGetNetData", response.body().toString());
+        }
         /*//1、 可以隔离
         OkHttpClient client = new OkHttpClient(); // okhttp 配置一些默认
         //2、构建请求 1）url 2）参数

@@ -32,5 +32,6 @@ dependencies {
     androidTestCompile("com.android.support.test.espresso:espresso-core:$test_version", {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
+    //网络
+    compile 'com.squareup.okhttp3:okhttp:3.12.0'
 }
