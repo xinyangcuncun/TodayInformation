@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * Created by anson on 2019/1/5.
  */
-public class LfHttpTask {
+public class LfHttpServer {
 
     protected  Object execute(IRequest request, Map<String,Object> params) {
         return HttpHelper.execute(request,params);

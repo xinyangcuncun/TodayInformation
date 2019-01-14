@@ -13,7 +13,8 @@ import android.widget.ImageView;
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseActivity;
 import com.news.today.todayinformation.base.ViewInject;
-import com.news.today.todayinformation.main.shanghai.module.ShangHaiDetailHttpTask;
+import com.news.today.todayinformation.main.shanghai.lf.IShanghaiDetailContract;
+import com.news.today.todayinformation.main.shanghai.presenter.ShanghaiDetailPresenter;
 
 import java.io.IOException;
 
@@ -29,7 +30,9 @@ import okhttp3.Response;
  * Created by anson on 2018/12/12.
  */
 @ViewInject(mainlayoutid = R.layout.activity_shanghai_detail)
-public class ShanghaiDetailActivity extends BaseActivity {
+public class ShanghaiDetailActivity extends BaseActivity implements IShanghaiDetailContract.Iview{
+
+    IShanghaiDetailContract.IPresenter mPresenter = new ShanghaiDetailPresenter(this);
 
     public static String mActivityOptionsCompat = "ShanghaiDetailActivity";
     @BindView(R.id.iv_shanghai_detail)
@@ -68,11 +71,14 @@ public class ShanghaiDetailActivity extends BaseActivity {
      * 发送网络请求数据
      */
     private void initGetNetData() {
-        Object desc = new ShangHaiDetailHttpTask().getXiaoHuaList("desc", "1", "1");
-        if (desc instanceof Response) {
-            Response response = (Response) desc;
-            Log.e("initGetNetData", response.body().toString());
-        }
+        mPresenter.getNetData();
+//        GetXiaoHuaTask task = new GetXiaoHuaTask();
+//        task.execute("desc", "1", "1");
+//        Object desc = new ShangHaiDetailHttpTask().getXiaoHuaList("desc", "1", "1");
+//        if (desc instanceof Response) {
+//            Response response = (Response) desc;
+//            Log.e("initGetNetData", response.body().toString());
+//        }
         /*//1、 可以隔离
         OkHttpClient client = new OkHttpClient(); // okhttp 配置一些默认
         //2、构建请求 1）url 2）参数
