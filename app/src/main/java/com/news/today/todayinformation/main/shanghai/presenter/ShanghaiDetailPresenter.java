@@ -22,6 +22,7 @@ public class ShanghaiDetailPresenter extends BasePresenter<IShanghaiDetailContra
     @Override
     public void getNetData() {
         submitTask(new LfTask() {
+            //一定要回调到主线程
             @Override
             public void onSuccess(Object o) {
                 //获取网络结果
