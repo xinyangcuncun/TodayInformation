@@ -3,7 +3,7 @@ package com.anson.abc.task;
 /**
  * Created by anson on 2019/1/13.
  */
-public interface ITaskBackground {
+public interface ITaskBackground<Result> {
 
-    Object onBackground();
+    Result onBackground();
 }

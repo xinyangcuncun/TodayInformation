@@ -3,9 +3,9 @@ package com.anson.abc.task;
 /**
  * Created by anson on 2019/1/13.
  */
-public interface ITaskCallback {
+public interface ITaskCallback<Result> {
 
-    void onSuccess(Object o);
+    void onComplete(Result o);
 
     void onException(Throwable throwable);
 }

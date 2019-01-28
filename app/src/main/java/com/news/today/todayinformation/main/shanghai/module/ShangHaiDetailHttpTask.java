@@ -1,6 +1,7 @@
 package com.news.today.todayinformation.main.shanghai.module;
 
 import com.anson.abc.http.LfHttpServer;
+import com.anson.abc.http.result.IResult;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,9 +9,9 @@ import java.util.Map;
 /**
  * Created by anson on 2019/1/5.
  */
-public class ShangHaiDetailHttpTask extends LfHttpServer {
+public class ShangHaiDetailHttpTask<T> extends LfHttpServer {
 
-    public Object getXiaoHuaList(String sort, String page,String pagesize) {
+    public IResult<T> getXiaoHuaList(String sort, String page, String pagesize) {
         Map<String, Object> params = new HashMap<>();
         params.put("sort", sort);
         params.put("page", page);

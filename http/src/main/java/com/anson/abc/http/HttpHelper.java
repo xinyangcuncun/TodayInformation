@@ -3,6 +3,7 @@ package com.anson.abc.http;
 import com.anson.abc.http.okhttp.OkHttpScheduler;
 import com.anson.abc.http.request.IRequest;
 import com.anson.abc.http.request.call.ICall;
+import com.anson.abc.http.result.IResult;
 
 import java.util.Map;
 
@@ -25,10 +26,9 @@ public class HttpHelper {
     }
 
     // REMAKE: 待重构 2019/1/5
-    protected static Object execute(IRequest request, Map<String,Object> params) {
+    protected static  <T> IResult<T> execute(IRequest request, Map<String,Object> params) {
         request.setParams(params);
         ICall call = getHttpScheduler().newCall(request);
-        Object object = getHttpScheduler().execute(call);
-        return object;
+        return getHttpScheduler().execute(call);
     }
 }

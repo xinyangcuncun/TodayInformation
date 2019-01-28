@@ -1,8 +1,10 @@
 package com.anson.abc.http.request;
 
+import com.anson.abc.http.parser.IParser;
 import com.anson.abc.http.annotation.RequestMethod;
 import com.anson.abc.http.request.host.IHost;
 
+import java.lang.reflect.Type;
 import java.util.Map;
 
 /**
@@ -16,6 +18,10 @@ public class LfRequest implements IRequest{
     protected IHost host;
 
     protected Map<String, Object> params;
+
+    protected Type type;
+
+    protected IParser resultParser;
 
     @RequestMethod
     protected int requestMethod;
@@ -43,5 +49,15 @@ public class LfRequest implements IRequest{
     @Override
     public String getPath() {
         return path;
+    }
+
+    @Override
+    public IParser getParser() {
+        return resultParser;
+    }
+
+    @Override
+    public Type getType() {
+        return type;
     }
 }
