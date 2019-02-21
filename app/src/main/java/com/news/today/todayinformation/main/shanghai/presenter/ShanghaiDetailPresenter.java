@@ -10,6 +10,8 @@ import com.news.today.todayinformation.main.shanghai.dto.ShangHaiDetailBean;
 import com.news.today.todayinformation.main.shanghai.lf.IShanghaiDetailContract;
 import com.news.today.todayinformation.main.shanghai.module.ShangHaiDetailHttpTask;
 
+import java.util.ArrayList;
+
 /**
  * Created by anson on 2019/1/13.
  */
@@ -17,6 +19,7 @@ public class ShanghaiDetailPresenter extends BasePresenter<IShanghaiDetailContra
 
     public ShanghaiDetailPresenter(IShanghaiDetailContract.Iview view) {
         super(view);
+
     }
 
     @Override

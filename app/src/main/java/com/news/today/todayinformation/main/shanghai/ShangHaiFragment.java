@@ -1,5 +1,7 @@
 package com.news.today.todayinformation.main.shanghai;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -30,6 +32,11 @@ public class ShangHaiFragment extends BaseFragment {
     AppBarLayout shanghaiAppBarlayot;
     @BindView(R.id.shanghai_recyclerview)
     RecyclerView mRecyclerView;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public void afterBindView() {
