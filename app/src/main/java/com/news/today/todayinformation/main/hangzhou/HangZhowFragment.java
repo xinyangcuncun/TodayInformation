@@ -1,5 +1,8 @@
 package com.news.today.todayinformation.main.hangzhou;
 
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.UnderlineSpan;
 import android.widget.TextView;
 
 import com.news.today.todayinformation.R;
@@ -18,6 +21,10 @@ public class HangZhowFragment extends BaseFragment{
 
     @Override
     public void afterBindView() {
-        tvPosition.setText("杭州");
+        SpannableString spannableString =  new SpannableString("杭州");
+        UnderlineSpan mUnderlineSpan = new UnderlineSpan();
+        spannableString.setSpan(mUnderlineSpan,0,spannableString.length(), Spanned.SPAN_USER);
+        tvPosition.setText(spannableString);
+
     }
 }

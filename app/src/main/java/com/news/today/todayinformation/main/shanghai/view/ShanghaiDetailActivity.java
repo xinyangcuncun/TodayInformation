@@ -22,6 +22,7 @@ import butterknife.BindView;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
+import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -71,12 +72,12 @@ public class ShanghaiDetailActivity extends BaseActivity implements IShanghaiDet
      * 发送网络请求数据
      */
     private void initGetNetData() {
-        ivShanghaiDetail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mPresenter.getNetData();
-            }
-        });
+//        ivShanghaiDetail.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mPresenter.getNetData();
+//            }
+//        });
 //        GetXiaoHuaTask task = new GetXiaoHuaTask();
 //        task.execute("desc", "1", "1");
 //        Object desc = new ShangHaiDetailHttpTask().getXiaoHuaList("desc", "1", "1");
@@ -84,15 +85,15 @@ public class ShanghaiDetailActivity extends BaseActivity implements IShanghaiDet
 //            Response response = (Response) desc;
 //            Log.e("initGetNetData", response.body().toString());
 //        }
-        /*//1、 可以隔离
+        //1、 可以隔离
         OkHttpClient client = new OkHttpClient(); // okhttp 配置一些默认
         //2、构建请求 1）url 2）参数
-        HttpUrl.Builder builder = HttpUrl.parse("http://v.juhe.cn/joke/content/list.php").newBuilder();
-        builder.addQueryParameter("sort", "desc");
-        builder.addQueryParameter("page", "1");
-        builder.addQueryParameter("pagesize", "1");
-        builder.addQueryParameter("time", "" + System.currentTimeMillis()/1000);
-        builder.addQueryParameter("key", "bbc57dd5e4f05991aff09eafd2e667e0");
+        HttpUrl.Builder builder = HttpUrl.parse("https://www.baidu.com").newBuilder();
+//        builder.addQueryParameter("sort", "desc");
+//        builder.addQueryParameter("page", "1");
+//        builder.addQueryParameter("pagesize", "1");
+//        builder.addQueryParameter("time", "" + System.currentTimeMillis()/1000);
+//        builder.addQueryParameter("key", "bbc57dd5e4f05991aff09eafd2e667e0");
         //3、构建Request
         Request request = new Request.Builder()
                 .url(builder.build())
@@ -111,7 +112,7 @@ public class ShanghaiDetailActivity extends BaseActivity implements IShanghaiDet
             public void onResponse(Call call, Response response) throws IOException {
                 Log.e("initGetNetData","onResponse" + response.body().string());
             }
-        });*/
+        });
     }
 
     private void initAnima() {

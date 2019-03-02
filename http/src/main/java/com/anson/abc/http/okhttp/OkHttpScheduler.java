@@ -2,11 +2,15 @@ package com.anson.abc.http.okhttp;
 
 import com.anson.abc.http.HttpScheduler;
 import com.anson.abc.http.annotation.RequestMethod;
+import com.anson.abc.http.https.Https;
 import com.anson.abc.http.request.IRequest;
 import com.anson.abc.http.request.call.ICall;
 
 import java.util.Iterator;
 import java.util.Map;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLSession;
 
 import okhttp3.Call;
 import okhttp3.HttpUrl;
@@ -54,7 +58,16 @@ public class OkHttpScheduler extends HttpScheduler{
 
     private OkHttpClient getClient() {
         if (client == null) {
-            client = new OkHttpClient();
+//            client = new OkHttpClient();
+            OkHttpClient.Builder builder = new OkHttpClient.Builder();
+            builder.sslSocketFactory(Https.getSSLSocketFactory());
+            builder.hostnameVerifier(new HostnameVerifier() {
+                @Override
+                public boolean verify(String hostname, SSLSession session) {
+                    return true;
+                }
+            });
+            client = builder.build();
         }
         return client;
     }
