@@ -1,30 +1,51 @@
 package com.news.today.todayinformation.main.hangzhou;
 
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.UnderlineSpan;
-import android.widget.TextView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
+import com.news.today.todayinformation.main.shenzhen.ShenZhenFragment;
 
 import butterknife.BindView;
 
 /**
  * Created by anson on 2018/11/18.
  */
-@ViewInject(mainlayoutid = R.layout.fragment_others)
-public class HangZhowFragment extends BaseFragment{
-    @BindView(R.id.tv_position)
-    TextView tvPosition;
+@ViewInject(mainlayoutid = R.layout.fragment_hangzhou)
+public class HangZhowFragment extends BaseFragment {
+
+
+    @BindView(R.id.tl_tablayout)
+    TabLayout tlTablayout;
+    @BindView(R.id.vp_viewpager)
+    ViewPager vpViewpager;
 
     @Override
     public void afterBindView() {
-        SpannableString spannableString =  new SpannableString("杭州");
-        UnderlineSpan mUnderlineSpan = new UnderlineSpan();
-        spannableString.setSpan(mUnderlineSpan,0,spannableString.length(), Spanned.SPAN_USER);
-        tvPosition.setText(spannableString);
+        tlTablayout.setupWithViewPager(vpViewpager);
+        vpViewpager.setAdapter(new FragmentStatePagerAdapter(getChildFragmentManager()) {
 
+            @Override
+            public Fragment getItem(int position) {
+                Log.d("HangZhowFragment", "position" + position);
+                return new ShenZhenFragment();
+            }
+
+            @Override
+            public int getCount() {
+                return 5;
+            }
+
+            @Override
+            public CharSequence getPageTitle(int position) {
+                return "深圳";
+            }
+        });
     }
+
 }
