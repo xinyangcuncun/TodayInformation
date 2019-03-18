@@ -4,12 +4,11 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
-import com.news.today.todayinformation.main.shenzhen.ShenZhenFragment;
+import com.news.today.todayinformation.main.hangzhou.view.ZhiHuFragment;
 
 import butterknife.BindView;
 
@@ -32,18 +31,17 @@ public class HangZhowFragment extends BaseFragment {
 
             @Override
             public Fragment getItem(int position) {
-                Log.d("HangZhowFragment", "position" + position);
-                return new ShenZhenFragment();
+                return new ZhiHuFragment();
             }
 
             @Override
             public int getCount() {
-                return 5;
+                return 1;
             }
 
             @Override
             public CharSequence getPageTitle(int position) {
-                return "深圳";
+                return "知乎";
             }
         });
     }

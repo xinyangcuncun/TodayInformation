@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseActivity;
 import com.news.today.todayinformation.base.ViewInject;
+import com.news.today.todayinformation.main.shanghai.dto.ShangHaiDetailBean;
 import com.news.today.todayinformation.main.shanghai.lf.IShanghaiDetailContract;
 import com.news.today.todayinformation.main.shanghai.presenter.ShanghaiDetailPresenter;
 
@@ -133,5 +134,10 @@ public class ShanghaiDetailActivity extends BaseActivity implements IShanghaiDet
             ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, pair);
             ActivityCompat.startActivity(activity,intent,optionsCompat.toBundle());
         }
+    }
+
+    @Override
+    public void showData(ShangHaiDetailBean data) {
+
     }
 }

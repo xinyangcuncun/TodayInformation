@@ -1,16 +1,11 @@
 package com.news.today.todayinformation.main.shanghai.presenter;
 
-import android.util.Log;
-
 import com.anson.abc.http.result.IResult;
-import com.google.gson.Gson;
 import com.news.today.todayinformation.base.BasePresenter;
 import com.news.today.todayinformation.base.JHTask;
 import com.news.today.todayinformation.main.shanghai.dto.ShangHaiDetailBean;
 import com.news.today.todayinformation.main.shanghai.lf.IShanghaiDetailContract;
 import com.news.today.todayinformation.main.shanghai.module.ShangHaiDetailHttpTask;
-
-import java.util.ArrayList;
 
 /**
  * Created by anson on 2019/1/13.
@@ -28,7 +23,7 @@ public class ShanghaiDetailPresenter extends BasePresenter<IShanghaiDetailContra
     }
 
     @Override
-    public void getNetData() {
+    public void getNetData(final int pagesize) {
 
         //1、数据的结果解析怎么来做
         //2、相同任务的去重工作
@@ -64,15 +59,16 @@ public class ShanghaiDetailPresenter extends BasePresenter<IShanghaiDetailContra
            submitTask(new JHTask<ShangHaiDetailBean>() {
                @Override
                public IResult<ShangHaiDetailBean> onBackground() {
-                   return new ShangHaiDetailHttpTask<ShangHaiDetailBean>().getXiaoHuaList("desc", "1", "1");
+                   return new ShangHaiDetailHttpTask<ShangHaiDetailBean>().getXiaoHuaList("desc", "1", pagesize + "");
                }
 
                @Override
                public void onSuccess(IResult<ShangHaiDetailBean> t) {
                    ShangHaiDetailBean data = t.data();
-                   Gson gson = new Gson();
-                   String s = gson.toJson(data);
-                   Log.e("ShanghaiDetailPresenter", s);
+//                   Gson gson = new Gson();
+//                   String s = gson.toJson(data);
+//                   Log.e("ShanghaiDetailPresenter", s);
+                   getView().showData(data);
                }
            });
         }

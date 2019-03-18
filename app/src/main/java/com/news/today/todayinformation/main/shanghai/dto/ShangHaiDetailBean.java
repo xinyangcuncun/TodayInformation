@@ -23,6 +23,5 @@ public class ShangHaiDetailBean {
        public String hashId;
        public String unixtime;
        public String updatetime;
-
     }
 }

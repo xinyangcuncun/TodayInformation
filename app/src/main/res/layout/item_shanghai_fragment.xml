@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -12,12 +13,15 @@
         android:layout_height="50dp" />
 
     <TextView
+        android:maxLines="2"
+        android:ellipsize="end"
         android:id="@+id/item_shanghai_tv"
         android:background="@color/color_ADADAD"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="上海"
+        android:text=""
         android:textColor="@color/color_ffffff" />
+
 </LinearLayout>
