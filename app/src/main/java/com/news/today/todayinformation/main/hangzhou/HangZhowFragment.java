@@ -1,14 +1,12 @@
 package com.news.today.todayinformation.main.hangzhou;
 
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
-import com.news.today.todayinformation.main.hangzhou.view.ZhiHuFragment;
+import com.news.today.todayinformation.main.hangzhou.adpter.HangzhouViewPagerAdapter;
 
 import butterknife.BindView;
 
@@ -27,23 +25,7 @@ public class HangZhowFragment extends BaseFragment {
     @Override
     public void afterBindView() {
         tlTablayout.setupWithViewPager(vpViewpager);
-        vpViewpager.setAdapter(new FragmentStatePagerAdapter(getChildFragmentManager()) {
-
-            @Override
-            public Fragment getItem(int position) {
-                return new ZhiHuFragment();
-            }
-
-            @Override
-            public int getCount() {
-                return 1;
-            }
-
-            @Override
-            public CharSequence getPageTitle(int position) {
-                return "知乎";
-            }
-        });
+        vpViewpager.setAdapter(new HangzhouViewPagerAdapter(getChildFragmentManager()));
     }
 
 }
