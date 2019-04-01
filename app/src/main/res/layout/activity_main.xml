@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -28,8 +29,33 @@
         android:background="@color/color_black_30"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:id="@+id/rg_main_top"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/rb_main_shanghai"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                app:lottie_fileName="lottie/shanghai.json"
+                />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/rb_main_hangzhou"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                app:lottie_fileName="lottie/hangzhou.json"
+                />
+
+        </LinearLayout>
         
-        <RadioGroup
+        <!--<RadioGroup
             android:id="@+id/rg_main_top"
             android:orientation="horizontal"
             android:gravity="center_vertical"
@@ -48,7 +74,7 @@
                 android:drawableTop="@drawable/selector_main_top_tab_hangzhou"
                 style="@style/main_tab_rb_style" />
 
-        </RadioGroup>
+        </RadioGroup>-->
 
         <RadioGroup
             android:gravity="center_vertical"

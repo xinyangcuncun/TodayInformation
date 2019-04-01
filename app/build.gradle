@@ -31,6 +31,8 @@ dependencies {
     // butterknife
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //lottie
+    compile "com.airbnb.android:lottie:2.2.5"
     // module 的依赖引入
     compile project(':mvp')
     compile project(':http')
