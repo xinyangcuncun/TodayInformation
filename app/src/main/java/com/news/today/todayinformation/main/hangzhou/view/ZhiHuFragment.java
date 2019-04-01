@@ -4,6 +4,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.animation.AnimationUtils;
 
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseFragment;
@@ -32,6 +33,7 @@ public class ZhiHuFragment extends BaseFragment implements IShanghaiDetailContra
     @Override
     public void afterBindView() {
         zhihuRecyclerview.setLayoutManager(new LinearLayoutManager(mContext));
+        zhihuRecyclerview.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.zhihu_recyclerview_show));
         mPresenter.getNetData(20);
     }
 

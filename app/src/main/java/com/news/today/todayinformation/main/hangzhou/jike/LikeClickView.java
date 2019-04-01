@@ -1,5 +1,6 @@
 package com.news.today.todayinformation.main.hangzhou.jike;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -27,6 +28,9 @@ public class LikeClickView extends View{
     private Paint bitmapPaint;
     private int left;
     private int top;
+    private float handScale = 1.0f;
+    private float centerX;
+    private int centerY;
 
     public LikeClickView(Context context) {
         this(context,null,0);
@@ -91,7 +95,11 @@ public class LikeClickView extends View{
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Bitmap handBitmap = isLike ? likeBitmap : unLikeBitmap;
+        // 使用 canvas scale及其他的效果方法时  必须 先调用save 然后再调用restore （这两个方法成对出现的）
+        canvas.save();
+        canvas.scale(handScale,handScale,centerX,centerX);
         canvas.drawBitmap(handBitmap,left,top,bitmapPaint);
+        canvas.restore();
         if (isLike) {
             canvas.drawBitmap(shiningBitmap,left + 10,0,bitmapPaint);
         }
@@ -102,6 +110,10 @@ public class LikeClickView extends View{
         int bitmapHeight = likeBitmap.getHeight();
         left = (measureWidth - bitmapWidth)/2;
         top = (measureHeight - bitmapHeight)/2;
+        int width = getMeasuredWidth();
+        int height = getMeasuredHeight();
+        centerX = width / 2;
+        centerY = height / 2;
     }
 
     // 当这个自定义View 从 界面 脱离消失的时候
@@ -127,6 +139,30 @@ public class LikeClickView extends View{
     // 待完善 动画的处理
     private void onClick() {
         isLike = !isLike;
+//        ObjectAnimator handScale = ObjectAnimator.ofFloat(this, "handScale", 1.0f, 0.8f, 1.0f);
+//        handScale.setDuration(250);
+//        handScale.start();
+
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(1.0f, 0.8f, 1.0f);
+        valueAnimator.setDuration(250);
+        valueAnimator.start();
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float animatedValue = (float) animation.getAnimatedValue();
+                handScale = animatedValue;
+                invalidate();
+            }
+        });
+
+    }
+
+    /**
+     * 使用ObjectAnimator 系统会自动调用 该属性的 Set 方法
+     * @param value
+     */
+    public void setHandScale(float value) {
+        this.handScale = value;
         invalidate();
     }
 }
