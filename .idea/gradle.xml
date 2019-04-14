@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/http" />
             <option value="$PROJECT_DIR$/mvp" />
+            <option value="$PROJECT_DIR$/refresh" />
             <option value="$PROJECT_DIR$/task" />
           </set>
         </option>

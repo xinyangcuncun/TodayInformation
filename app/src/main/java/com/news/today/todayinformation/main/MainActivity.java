@@ -2,6 +2,7 @@ package com.news.today.todayinformation.main;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -185,4 +186,10 @@ public class MainActivity extends BaseActivity implements IMainActivityContract.
     public void hideFragment(Fragment mFragment) {
         getSupportFragmentManager().beginTransaction().hide(mFragment).commit();
     }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
+    }
+
 }
