@@ -4,16 +4,16 @@ package com.news.today.todayinformation.main;
 import android.support.v4.app.Fragment;
 
 import com.news.today.todayinformation.R;
+import com.news.today.todayinformation.base.BasePresenter;
 import com.news.today.todayinformation.main.beijing.BeiJingFragment;
 import com.news.today.todayinformation.main.hangzhou.HangZhowFragment;
 import com.news.today.todayinformation.main.shanghai.ShangHaiFragment;
 import com.news.today.todayinformation.main.shenzhen.ShenZhenFragment;
-import com.anson.abc.mvp.mvp.base.BaseMvpPresenter;
 
 /**
  * Created by anson on 2018/11/11.
  */
-public class MainActivityPresenter extends BaseMvpPresenter<IMainActivityContract.Iview> implements IMainActivityContract.IPresenter{
+public class MainActivityPresenter extends BasePresenter<IMainActivityContract.Iview> implements IMainActivityContract.IPresenter{
 
     // 当前Fragment的 角标
     private int mCurrentFragmentIndex;
@@ -26,10 +26,10 @@ public class MainActivityPresenter extends BaseMvpPresenter<IMainActivityContrac
         super(view);
     }
 
-    @Override
-    protected IMainActivityContract.Iview getEmptyView() {
-        return IMainActivityContract.emptyView;
-    }
+//    @Override
+//    protected IMainActivityContract.Iview getEmptyView() {
+//        return IMainActivityContract.emptyView;
+//    }
 
     @Override
     public void initHomeFragment() {

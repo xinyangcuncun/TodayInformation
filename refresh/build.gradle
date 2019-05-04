@@ -24,11 +24,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile "$support_group:appcompat-v7:$support_version"
-    testCompile 'junit:junit:4.12'
-    androidTestCompile("com.android.support.test.espresso:espresso-core:$test_version", {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    provided "$support_group:recyclerview-v7:$support_version"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "$support_group:appcompat-v7:$support_version"
+
+    compileOnly "$support_group:recyclerview-v7:$support_version"
 }

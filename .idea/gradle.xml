@@ -8,7 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/annotation" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/apt" />
             <option value="$PROJECT_DIR$/http" />
             <option value="$PROJECT_DIR$/mvp" />
             <option value="$PROJECT_DIR$/refresh" />

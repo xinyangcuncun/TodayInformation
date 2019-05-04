@@ -1,11 +1,11 @@
 package com.news.today.todayinformation.splash;
 
-import com.anson.abc.mvp.mvp.base.BaseMvpPresenter;
+import com.news.today.todayinformation.base.BasePresenter;
 
 /**
  * Created by anson on 2018/10/13.
  */
-public class SplashTimerPresenter extends BaseMvpPresenter<ISplashActivityContract.Iview> implements ISplashActivityContract.IPresenter{
+public class SplashTimerPresenter extends BasePresenter<ISplashActivityContract.Iview> implements ISplashActivityContract.IPresenter{
 
 
     private CustomCountDownTimer timer;
@@ -14,7 +14,7 @@ public class SplashTimerPresenter extends BaseMvpPresenter<ISplashActivityContra
         super(view);
     }
 
-
+    @Override
     public void initTimer() {
         timer = new CustomCountDownTimer(5, new CustomCountDownTimer.ICountDownHandler() {
             @Override
@@ -45,8 +45,8 @@ public class SplashTimerPresenter extends BaseMvpPresenter<ISplashActivityContra
      * 防止 空指针异常
      * @return
      */
-    @Override
-    protected ISplashActivityContract.Iview getEmptyView() {
-        return ISplashActivityContract.emptyView;
-    }
+//    @Override
+//    protected ISplashActivityContract.Iview getEmptyView() {
+//        return ISplashActivityContract.emptyView;
+//    }
 }
