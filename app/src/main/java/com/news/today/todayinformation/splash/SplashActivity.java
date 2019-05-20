@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.news.today.todayinformation.base.BaseActivity;
+import com.news.today.todayinformation.base.Test;
 import com.news.today.todayinformation.main.MainActivity;
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.ViewInject;
@@ -55,6 +56,7 @@ public class SplashActivity extends BaseActivity implements ISplashActivityContr
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                Test.save(SplashActivity.this);
                 finish();
             }
         });
