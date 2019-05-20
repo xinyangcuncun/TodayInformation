@@ -2,7 +2,7 @@ package com.news.today.todayinformation.main.shenzhen;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
 import android.util.Log;
 import android.widget.TextView;
 
@@ -10,6 +10,7 @@ import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
 
+import androidx.annotation.Nullable;
 import butterknife.BindView;
 
 /**

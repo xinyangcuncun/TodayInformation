@@ -1,7 +1,10 @@
 package com.news.today.todayinformation.main;
 
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
+
+
+
+
+import androidx.fragment.app.Fragment;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +16,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseActivity;
 import com.news.today.todayinformation.base.ViewInject;

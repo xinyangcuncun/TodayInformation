@@ -1,13 +1,15 @@
 package com.news.today.todayinformation.main.hangzhou;
 
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 
+
+
+import com.google.android.material.tabs.TabLayout;
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
 import com.news.today.todayinformation.main.hangzhou.adpter.HangzhouViewPagerAdapter;
 
+import androidx.viewpager.widget.ViewPager;
 import butterknife.BindView;
 
 /**

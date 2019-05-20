@@ -1,7 +1,7 @@
 package com.news.today.todayinformation.main;
 
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BasePresenter;

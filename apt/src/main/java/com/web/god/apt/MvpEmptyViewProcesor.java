@@ -46,7 +46,7 @@ public class MvpEmptyViewProcesor {
                     continue;
                 }
                 mList.add(currentType);
-                //生成本身的方法
+
                 StringBuilder s = new StringBuilder();
                 List<? extends Element> enclosedElements = element.getEnclosedElements();
                 for (int i = 0; i < enclosedElements.size(); i++) {
@@ -55,7 +55,7 @@ public class MvpEmptyViewProcesor {
                         s.append("@Override ").append("public").append(" ").append(elementBean.returnType).append(" ").append(elementBean.methordName).append("(").append(elementBean.params).append(")").append(String.format("{%s}\n", ExecutableElementParseUtil.getReturnType(elementBean)));
                     }
                 }
-                //生成父类的接口方法(这是一个递归的操作)
+
                 getSuperFun(element, s);
                 blockBuilder.addStatement("case $S : \n return  new $T(){ \n$L }", element.toString(), currentType, s);
             }
@@ -72,7 +72,6 @@ public class MvpEmptyViewProcesor {
     }
 
     /**
-     * 递归获取 父类的方法
      *
      * @param element
      * @param s

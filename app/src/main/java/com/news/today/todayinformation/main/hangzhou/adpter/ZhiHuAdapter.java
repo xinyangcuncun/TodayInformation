@@ -1,6 +1,5 @@
 package com.news.today.todayinformation.main.hangzhou.adpter;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,8 @@ import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.main.shanghai.dto.ShangHaiDetailBean;
 
 import java.util.ArrayList;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by anson on 2018/12/3.

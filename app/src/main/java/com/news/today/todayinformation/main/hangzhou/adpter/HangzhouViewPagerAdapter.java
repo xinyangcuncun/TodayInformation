@@ -1,14 +1,16 @@
 package com.news.today.todayinformation.main.hangzhou.adpter;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+
 
 import com.news.today.todayinformation.main.hangzhou.view.JiKeFragment;
 import com.news.today.todayinformation.main.hangzhou.view.RefreshFragment;
 import com.news.today.todayinformation.main.hangzhou.view.ZhiHuFragment;
 
 import java.util.ArrayList;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 /**
  * Created by anson on 2019/3/23.

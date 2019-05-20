@@ -1,8 +1,7 @@
 package com.news.today.todayinformation.main.shanghai.adapter;
 
 import android.app.Activity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,9 @@ import com.news.today.todayinformation.main.shanghai.dto.ShanghaiBean;
 import com.news.today.todayinformation.main.shanghai.view.ShanghaiDetailActivity;
 
 import java.util.ArrayList;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by anson on 2018/12/3.

@@ -1,11 +1,9 @@
 package com.news.today.todayinformation.main.hangzhou.view;
 
-import android.support.design.widget.AppBarLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+
 import android.view.animation.AnimationUtils;
 
+import com.google.android.material.appbar.AppBarLayout;
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
@@ -14,6 +12,9 @@ import com.news.today.todayinformation.main.shanghai.dto.ShangHaiDetailBean;
 import com.news.today.todayinformation.main.shanghai.lf.IShanghaiDetailContract;
 import com.news.today.todayinformation.main.shanghai.presenter.ShanghaiDetailPresenter;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 
 /**

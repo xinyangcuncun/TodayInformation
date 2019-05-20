@@ -2,13 +2,14 @@ package com.news.today.todayinformation.base;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.anson.abc.mvp.mvp.view.LifeCircleMvpFragment;
 
+import androidx.annotation.Nullable;
 import butterknife.ButterKnife;
 
 /**

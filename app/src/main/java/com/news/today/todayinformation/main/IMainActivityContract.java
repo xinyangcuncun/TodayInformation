@@ -1,6 +1,6 @@
 package com.news.today.todayinformation.main;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.anson.abc.mvp.mvp.ILifeCircle;
 import com.anson.abc.mvp.mvp.IMvpView;

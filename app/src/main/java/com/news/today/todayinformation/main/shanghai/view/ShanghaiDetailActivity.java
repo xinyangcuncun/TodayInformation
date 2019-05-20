@@ -3,9 +3,7 @@ package com.news.today.todayinformation.main.shanghai.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.util.Pair;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,6 +17,9 @@ import com.news.today.todayinformation.main.shanghai.presenter.ShanghaiDetailPre
 
 import java.io.IOException;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import butterknife.BindView;
 import okhttp3.Call;
 import okhttp3.Callback;

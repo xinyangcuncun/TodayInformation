@@ -1,11 +1,14 @@
 package com.news.today.todayinformation.main.hangzhou.design;
 
 import android.content.Context;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v4.view.ViewCompat;
+
+
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.ViewCompat;
 
 /**
  * Created by anson on 2019/3/10.

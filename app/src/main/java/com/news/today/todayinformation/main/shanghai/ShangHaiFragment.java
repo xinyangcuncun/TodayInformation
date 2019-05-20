@@ -1,21 +1,23 @@
 package com.news.today.todayinformation.main.shanghai;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
 import com.news.today.todayinformation.main.shanghai.adapter.ShanghaiAdapter;
 import com.news.today.todayinformation.main.shanghai.dto.ShanghaiDataManager;
 
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 
 /**

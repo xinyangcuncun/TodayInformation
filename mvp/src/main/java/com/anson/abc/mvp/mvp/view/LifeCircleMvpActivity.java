@@ -2,11 +2,13 @@ package com.anson.abc.mvp.mvp.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
 
 import com.anson.abc.mvp.mvp.IMvpView;
 import com.anson.abc.mvp.mvp.MvpControler;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by anson on 2018/10/28.

@@ -1,10 +1,11 @@
 package com.news.today.todayinformation.base;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
 
 import com.anson.abc.mvp.mvp.view.LifeCircleMvpActivity;
 
+import androidx.annotation.Nullable;
 import butterknife.ButterKnife;
 
 /**

@@ -17,17 +17,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation "$support_group:appcompat-v7:$support_version"
-    implementation "$support_group:design:$support_version"
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+//    implementation "$support_group:appcompat-v7:$support_version"
+//    implementation "$support_group:design:$support_version"
+//    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
     // butterknife
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
     //lottie
     implementation  "com.airbnb.android:lottie:2.2.5"
     //apt
@@ -38,4 +45,6 @@ dependencies {
     implementation project(':http')
     implementation project(':task')
     implementation project(':refresh')
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0-alpha-1'
 }

@@ -1,6 +1,8 @@
 package com.anson.abc.http.annotation;
 
-import android.support.annotation.IntDef;
+
+
+import androidx.annotation.IntDef;
 
 import static com.anson.abc.http.annotation.RequestMethod.Get;
 import static com.anson.abc.http.annotation.RequestMethod.Post;

@@ -2,8 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion Integer.valueOf(compile_sdk_version)
-
-
+    buildToolsVersion build_tools_version
 
     defaultConfig {
         minSdkVersion Integer.valueOf(min_sdk_version)
@@ -22,12 +21,13 @@ android {
         }
     }
 
-    buildToolsVersion '27.0.3'
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "$support_group:appcompat-v7:$support_version"
+//    implementation "$support_group:appcompat-v7:$support_version"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
 
     //网络
     api 'com.squareup.okhttp3:okhttp:3.12.0'
