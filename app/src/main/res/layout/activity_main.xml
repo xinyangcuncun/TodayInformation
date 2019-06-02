@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <FrameLayout
         android:id="@+id/fl_main_content"
         android:layout_above="@+id/fl_main_bottom"

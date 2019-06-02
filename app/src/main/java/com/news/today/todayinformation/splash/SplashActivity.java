@@ -6,10 +6,10 @@ import android.net.Uri;
 import android.view.View;
 import android.widget.TextView;
 
-import com.news.today.todayinformation.base.BaseActivity;
-import com.news.today.todayinformation.main.MainActivity;
 import com.news.today.todayinformation.R;
+import com.news.today.todayinformation.base.BaseActivity;
 import com.news.today.todayinformation.base.ViewInject;
+import com.news.today.todayinformation.main.MainActivity;
 
 import java.io.File;
 
@@ -23,6 +23,8 @@ public class SplashActivity extends BaseActivity implements ISplashActivityContr
 
     @BindView(R.id.vv_play)
     FullScreenVideoView mVideoView;
+//    @BindView(R.id.splash_vs)
+//    ViewStub mViewStub;
     @BindView(R.id.tv_splash_timer)
     TextView mTvTimer;
     private ISplashActivityContract.IPresenter timerPresenter;
@@ -69,6 +71,17 @@ public class SplashActivity extends BaseActivity implements ISplashActivityContr
 
     @Override
     public void setTvTimer(String s) {
+        /*if (TextUtils.equals(s, "跳过")) {
+            View inflate = mViewStub.inflate();
+            inflate.setVisibility(View.VISIBLE);
+            inflate.findViewById(R.id.tv_splash_timer).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    finish();
+                }
+            });
+        }*/
         mTvTimer.setText(s);
     }
 
