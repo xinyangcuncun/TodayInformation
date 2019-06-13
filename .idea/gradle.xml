@@ -8,18 +8,6 @@
         </compositeConfiguration>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/annotation" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/apt" />
-            <option value="$PROJECT_DIR$/http" />
-            <option value="$PROJECT_DIR$/mvp" />
-            <option value="$PROJECT_DIR$/refresh" />
-            <option value="$PROJECT_DIR$/task" />
-          </set>
-        </option>
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>

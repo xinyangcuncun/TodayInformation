@@ -39,7 +39,4 @@ dependencies {
     implementation project(':task')
     implementation project(':refresh')
 
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.6.3'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
-    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
 }

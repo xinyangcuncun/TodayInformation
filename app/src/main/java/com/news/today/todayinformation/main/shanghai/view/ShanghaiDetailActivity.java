@@ -9,6 +9,7 @@ import android.support.v4.util.Pair;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseActivity;
@@ -39,11 +40,32 @@ public class ShanghaiDetailActivity extends BaseActivity implements IShanghaiDet
     public static String mActivityOptionsCompat = "ShanghaiDetailActivity";
     @BindView(R.id.iv_shanghai_detail)
     ImageView ivShanghaiDetail;
+    @BindView(R.id.tv_crash)
+    TextView mTvCrash;
 
     @Override
     public void afterBindView() {
         initAnima();
         initGetNetData();
+        ivShanghaiDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String s = null;
+                s.toString();
+            }
+        });
+        mTvCrash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String s = null;
+                        s.toString();
+                    }
+                }).start();
+            }
+        });
 //        initPostNetData();
     }
 

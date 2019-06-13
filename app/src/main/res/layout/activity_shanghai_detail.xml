@@ -11,4 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="200dp" />
 
+    <TextView
+        android:layout_marginTop="30dp"
+        android:id="@+id/tv_crash"
+        android:text="子线程崩溃"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
 </LinearLayout>
