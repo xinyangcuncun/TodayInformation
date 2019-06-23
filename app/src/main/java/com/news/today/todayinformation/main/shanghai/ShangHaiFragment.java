@@ -1,5 +1,7 @@
 package com.news.today.todayinformation.main.shanghai;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
@@ -11,10 +13,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.news.today.todayinformation.R;
+import com.news.today.todayinformation.base.tools.AnimationUtil;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
-import com.news.today.todayinformation.main.shanghai.adapter.ShanghaiAdapter;
-import com.news.today.todayinformation.main.shanghai.dto.ShanghaiDataManager;
+import com.news.today.todayinformation.base.tools.DoubleClickListener;
+import com.news.today.todayinformation.main.shanghai.adapter.ShanghaiAdapter2;
 
 import butterknife.BindView;
 
@@ -32,6 +35,9 @@ public class ShangHaiFragment extends BaseFragment {
     AppBarLayout shanghaiAppBarlayot;
     @BindView(R.id.shanghai_recyclerview)
     RecyclerView mRecyclerView;
+    @BindView(R.id.tv_marquee_title)
+    TextView mTvTitle;
+    private boolean mIsPlaying;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,7 +52,8 @@ public class ShangHaiFragment extends BaseFragment {
 
     private void initRecyclerView() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        mRecyclerView.setAdapter(new ShanghaiAdapter(getActivity(), ShanghaiDataManager.getData(),false));
+//        mRecyclerView.setAdapter(new ShanghaiAdapter(getActivity(), ShanghaiDataManager.getData(),false));
+        mRecyclerView.setAdapter(new ShanghaiAdapter2());
     }
 
     private void initListener() {
@@ -56,10 +63,39 @@ public class ShangHaiFragment extends BaseFragment {
                 Log.e("shanghaiAppBarlayot", "verticalOffset = " + verticalOffset + "appBarLayout = " + appBarLayout.getMeasuredHeight());
                 if (-verticalOffset < appBarLayout.getMeasuredHeight() / 2) {
                     tvShanghaiWelcome.setVisibility(View.INVISIBLE);
+                    mTvTitle.setVisibility(View.INVISIBLE);
                 } else {
                     tvShanghaiWelcome.setVisibility(View.VISIBLE);
+                    if (mIsPlaying) {
+                        mTvTitle.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         });
+
+        tvShanghaiWelcome.setOnClickListener(new DoubleClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTvTitle.clearAnimation();
+                tvShanghaiWelcome.clearAnimation();
+                if (mIsPlaying) {
+                    //关闭音视频动画
+                    mTvTitle.setVisibility(View.GONE);
+                    AnimationUtil.startTranslationXAnim(tvShanghaiWelcome,tvShanghaiWelcome.getTranslationX(),tvShanghaiWelcome.getTranslationX() + 150,null);
+                    AnimationUtil.startTranslationXAnim(mTvTitle,mTvTitle.getTranslationX(),mTvTitle.getTranslationX() + 150,null);
+
+                } else {
+                    //播放音视频动画
+                    AnimationUtil.startTranslationXAnim(tvShanghaiWelcome,tvShanghaiWelcome.getTranslationX(),tvShanghaiWelcome.getTranslationX() - 150,null);
+                    AnimationUtil.startTranslationXAnim(mTvTitle, mTvTitle.getTranslationX(), mTvTitle.getTranslationX() - 150, new AnimatorListenerAdapter() {
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            mTvTitle.setVisibility(View.VISIBLE);
+                        }
+                    });
+                }
+                mIsPlaying = !mIsPlaying;
+            }
+        }));
     }
 }

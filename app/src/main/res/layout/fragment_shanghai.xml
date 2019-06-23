@@ -26,18 +26,43 @@
                 android:layout_height="200dp" />
 
             <android.support.v7.widget.Toolbar
+                app:contentInsetStart="0dp"
                 app:layout_collapseMode="pin"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize">
-                <TextView
-                    android:id="@+id/tv_shanghai_welcome"
-                    android:textColor="@color/color_ffffff"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:visibility="gone"
-                    android:text="上海欢迎您"
+
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:visibility="gone"
+                        android:background="@drawable/shape_splash"
+                        android:id="@+id/tv_shanghai_welcome"
+                        android:textColor="@color/color_ffffff"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="今日播报"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <com.news.today.todayinformation.main.shanghai.view.MarqueeTextView
+                        android:visibility="gone"
+                        android:id="@+id/tv_marquee_title"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:text="目前播放的歌曲：天空"
+                        android:ellipsize="marquee"
+                        android:singleLine="true"
+                        android:textSize="15dp"
+                        android:textColor="@color/color_ffffff"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/tv_shanghai_welcome"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
             </android.support.v7.widget.Toolbar>
 
 

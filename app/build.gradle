@@ -21,15 +21,15 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-
     implementation "$support_group:appcompat-v7:$support_version"
     implementation "$support_group:design:$support_version"
+    implementation "$support_group:cardview-v7:$support_version"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     // butterknife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //lottie
-    implementation  "com.airbnb.android:lottie:2.2.5"
+    implementation 'com.airbnb.android:lottie:2.2.5'
     //apt
     implementation project(':annotation')
     annotationProcessor project(':apt')
@@ -38,5 +38,6 @@ dependencies {
     implementation project(':http')
     implementation project(':task')
     implementation 'com.github.xinyangcuncun:GodRefreshLayout:V1.0.0'
-//    implementation project(':refresh')
+    //    implementation project(':refresh')
+
 }

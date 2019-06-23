@@ -28,4 +28,27 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+
+    <style name="tweetName">
+        <item name="android:textColor">@color/hard_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <!--<item name="android:textStyle">bold</item>-->
+        <item name="android:shadowColor">#44000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="tweetText">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColorLink">#888888</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="tweetDate">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FFCCCCCC</item>
+    </style>
+
 </resources>
