@@ -38,5 +38,6 @@ dependencies {
     implementation project(':http')
     implementation project(':task')
     implementation project(':refresh')
+    implementation project(':player')
 
 }

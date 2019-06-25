@@ -21,6 +21,8 @@ import com.news.today.todayinformation.base.view.FocusableTextView;
 import com.news.today.todayinformation.main.shanghai.adapter.ShanghaiAdapter;
 import com.news.today.todayinformation.main.shanghai.adapter.ShanghaiAdapter2;
 import com.news.today.todayinformation.main.shanghai.dto.ShanghaiDataManager;
+import com.news.today.todayinformation.main.shanghai.lf.IPlayerContract;
+import com.news.today.todayinformation.main.shanghai.presenter.PlayerPresenter;
 
 import butterknife.BindView;
 
@@ -28,7 +30,9 @@ import butterknife.BindView;
  * Created by anson on 2018/11/18.
  */
 @ViewInject(mainlayoutid = R.layout.fragment_shanghai)
-public class ShangHaiFragment extends BaseFragment {
+public class ShangHaiFragment extends BaseFragment implements IPlayerContract.Iview{
+
+    private IPlayerContract.IPresenter mPlayerPresenter = new PlayerPresenter(this);
 
     @BindView(R.id.tv_shanghai_welcome)
     TextView tvShanghaiWelcome;
@@ -64,7 +68,6 @@ public class ShangHaiFragment extends BaseFragment {
         shanghaiAppBarlayot.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-                Log.e("shanghaiAppBarlayot", "verticalOffset = " + verticalOffset + "appBarLayout = " + appBarLayout.getMeasuredHeight());
                 if (-verticalOffset < appBarLayout.getMeasuredHeight() / 2) {
                     tvShanghaiWelcome.setVisibility(View.GONE);
                 } else {
@@ -107,6 +110,9 @@ public class ShangHaiFragment extends BaseFragment {
                         @Override
                         public void onAnimationEnd(Animator animation) {
                             title.setVisibility(View.VISIBLE);
+                            //开启服务
+                            mPlayerPresenter.bindPlayerService(mContext);
+
                         }
 
                         @Override

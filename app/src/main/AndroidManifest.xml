@@ -25,6 +25,10 @@
 
         <activity android:name=".main.MainActivity" />
         <activity android:name=".main.shanghai.view.ShanghaiDetailActivity" />
+
+
+        <meta-data android:name="player_type"
+            android:value="1" />
     </application>
 
 </manifest>

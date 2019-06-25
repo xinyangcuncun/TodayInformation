@@ -15,5 +15,6 @@ public class TodayInformationApplication  extends Application {
     public void onCreate() {
         super.onCreate();
         CrashProtectManager.getInstance().install(this);
+        ContextHelper.init(this);
     }
 }
