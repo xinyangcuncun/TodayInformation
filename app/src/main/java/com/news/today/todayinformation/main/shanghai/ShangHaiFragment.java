@@ -13,11 +13,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.news.today.todayinformation.R;
-import com.news.today.todayinformation.base.tools.AnimationUtil;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
+import com.news.today.todayinformation.base.tools.AnimationUtil;
 import com.news.today.todayinformation.base.tools.DoubleClickListener;
 import com.news.today.todayinformation.main.shanghai.adapter.ShanghaiAdapter2;
+import com.news.today.todayinformation.main.shanghai.lf.IPlayerServiceContract;
+import com.news.today.todayinformation.main.shanghai.presenter.PlayerServicePresenter;
 
 import butterknife.BindView;
 
@@ -25,7 +27,9 @@ import butterknife.BindView;
  * Created by anson on 2018/11/18.
  */
 @ViewInject(mainlayoutid = R.layout.fragment_shanghai)
-public class ShangHaiFragment extends BaseFragment {
+public class ShangHaiFragment extends BaseFragment implements IPlayerServiceContract.Iview{
+
+    IPlayerServiceContract.IPresenter mPresenter = new PlayerServicePresenter(this);
 
     @BindView(R.id.tv_shanghai_welcome)
     TextView tvShanghaiWelcome;
@@ -91,6 +95,8 @@ public class ShangHaiFragment extends BaseFragment {
                         @Override
                         public void onAnimationEnd(Animator animation) {
                             mTvTitle.setVisibility(View.VISIBLE);
+                            //启动Service 去 播放后台音乐
+                            mPresenter.bindService(mContext);
                         }
                     });
                 }
