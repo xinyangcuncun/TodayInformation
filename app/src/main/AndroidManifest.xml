@@ -25,6 +25,12 @@
 
         <activity android:name=".main.MainActivity" />
         <activity android:name=".main.shanghai.view.ShanghaiDetailActivity" />
+
+
+        <!--播放器配置信息-->
+        <meta-data
+            android:name="playertype"
+            android:value="1" />
     </application>
 
 </manifest>

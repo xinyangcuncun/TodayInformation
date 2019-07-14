@@ -1,11 +1,14 @@
 package com.news.today.player;
 
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
+import com.news.today.player.player.IPlayer;
+import com.news.today.player.player.PlayerFactory;
 import com.news.today.player.source.IPlayerSource;
 import com.news.today.player.state.PlayerState;
 
@@ -16,6 +19,8 @@ public class PlayerService extends Service{
 
 
     private PlayerState mState = PlayerState.IDLE;
+    private IPlayer mPlayer;
+    private PlayerFactory mPlayerFactory;
 
     public class PlayerBinder extends Binder {
 
@@ -42,12 +47,26 @@ public class PlayerService extends Service{
         super.onCreate();
     }
 
-    public void playOrPause(IPlayerSource playerSource) {
+    public void playOrPause(IPlayerSource playerSource,Context mContext) {
         switch (mState) {
             case IDLE:
                 //初始化播放器 去播放
                 String url = playerSource.getUrl();
-
+                if (mPlayer != null) {
+                    mPlayer.release();
+                }
+                if (mPlayerFactory == null) {
+                    mPlayerFactory = new PlayerFactory();
+                }
+                if (mPlayer == null) {
+                    mPlayer = mPlayerFactory.createPlayer(mContext);
+                }
+                if (mPlayer == null) {
+                    //播放器创建失败
+                    return;
+                }
+                //拿到播放器 去播放
+                mPlayer.prepare(mContext,url);
                 break;
             case PREPARING:
                 break;

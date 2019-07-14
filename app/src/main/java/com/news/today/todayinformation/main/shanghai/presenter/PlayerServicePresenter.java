@@ -28,7 +28,7 @@ public class PlayerServicePresenter extends BasePresenter<IPlayerServiceContract
             playerService = binder.getService();
             if (playerService != null) {
                 //开启播放音乐
-                playerService.playOrPause(new RawPlayerSource().setPath(ContextHelper.getInstance().getApplicationContext().getPackageName(), R.raw.minyao));
+                playerService.playOrPause(new RawPlayerSource().setPath(ContextHelper.getInstance().getApplicationContext().getPackageName(), R.raw.minyao),ContextHelper.getInstance().getApplicationContext());
             }
         }
 
