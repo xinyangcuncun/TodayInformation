@@ -13,4 +13,10 @@ public interface IPlayer {
     void release();
 
     void prepare(Context context ,String url);
+
+    void setPlayingListener(IPlayerListener listener);
+
+    void paused();
+
+    void reStart();
 }

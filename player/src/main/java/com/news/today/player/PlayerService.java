@@ -8,6 +8,7 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 
 import com.news.today.player.player.IPlayer;
+import com.news.today.player.player.IPlayerListener;
 import com.news.today.player.player.PlayerFactory;
 import com.news.today.player.source.IPlayerSource;
 import com.news.today.player.state.PlayerState;
@@ -15,12 +16,17 @@ import com.news.today.player.state.PlayerState;
 /**
  * Created by anson on 2019/6/30.
  */
-public class PlayerService extends Service{
+public class PlayerService extends Service implements IPlayerListener {
 
 
     private PlayerState mState = PlayerState.IDLE;
     private IPlayer mPlayer;
     private PlayerFactory mPlayerFactory;
+
+    @Override
+    public void playerStateChanged(PlayerState state) {
+        this.mState = state;
+    }
 
     public class PlayerBinder extends Binder {
 
@@ -41,7 +47,7 @@ public class PlayerService extends Service{
         return super.onStartCommand(intent, flags, startId);
     }
 
-    //onCreate 不管 start 还是 bind 也不管调用几次，只会启动一次，常用来做全局舒适化操作
+    //onCreate 不管 start 还是 bind 也不管调用几次，只会启动一次，常用来做全局初始化操作
     @Override
     public void onCreate() {
         super.onCreate();
@@ -67,6 +73,19 @@ public class PlayerService extends Service{
                 }
                 //拿到播放器 去播放
                 mPlayer.prepare(mContext,url);
+                mPlayer.setPlayingListener(this);
+                break;
+            case STARTED:
+                //去暂停
+                if (mPlayer != null) {
+                    mPlayer.paused();
+                }
+                break;
+            case PAUSED:
+                //继续播放
+                if (mPlayer != null) {
+                    mPlayer.reStart();
+                }
                 break;
             case PREPARING:
                 break;

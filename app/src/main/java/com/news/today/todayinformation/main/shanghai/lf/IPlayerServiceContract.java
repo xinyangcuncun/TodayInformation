@@ -18,6 +18,8 @@ public interface IPlayerServiceContract {
 
     interface IPresenter extends ILifeCircle {
         void bindService(Context context);
+
+        void playOrPaused();
     }
 
 
