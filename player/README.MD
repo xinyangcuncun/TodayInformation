@@ -13,4 +13,7 @@
      <meta-data
                  android:name="playertype"
                  android:value="1" />
+     // value = 1 :MediaPlayer
+     // value = 2 :ExoPlayer
+     ...
 

@@ -30,7 +30,7 @@
         <!--播放器配置信息-->
         <meta-data
             android:name="playertype"
-            android:value="1" />
+            android:value="2" />
     </application>
 
 </manifest>

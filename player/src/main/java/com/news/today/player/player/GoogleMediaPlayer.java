@@ -5,6 +5,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.util.Log;
 
+import com.news.today.player.source.IPlayerSource;
 import com.news.today.player.state.PlayerState;
 
 /**
@@ -30,11 +31,11 @@ public class GoogleMediaPlayer implements IPlayer, MediaPlayer.OnPreparedListene
     }
 
     @Override
-    public void prepare(Context context,String url) {
+    public void prepare(Context context,IPlayerSource iPlayerSource) {
         //操作MediaPlayer
         // medila Player 播放系统资源时  只能用 uri的方式
         try {
-            mMediaPlayer.setDataSource(context, Uri.parse(url));
+            mMediaPlayer.setDataSource(context, Uri.parse(iPlayerSource.getUrl()));
             mMediaPlayer.prepare();
         } catch (Exception e) {
             e.printStackTrace();
