@@ -23,9 +23,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".main.MainActivity" />
-        <activity android:name=".main.shanghai.view.ShanghaiDetailActivity" />
+        <provider
+            android:authorities="com.news.today.process.data"
+            android:name=".main.beijing.MainProcessDataProvider" />
 
+        <service android:name=".main.beijing.MainProcessService" />
+
+        <activity android:name=".main.MainActivity" />
+        <activity
+            android:process=":shanghai.detatil"
+            android:name=".main.shanghai.view.ShanghaiDetailActivity" />
 
         <!--播放器配置信息-->
         <meta-data
