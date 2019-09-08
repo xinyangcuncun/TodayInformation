@@ -43,6 +43,7 @@ dependencies {
     implementation project(':http')
     implementation project(':task')
     implementation project(':player')
+    implementation project(':ipc')
     implementation 'com.github.xinyangcuncun:GodRefreshLayout:V1.0.0'
     //    implementation project(':refresh')
 

@@ -28,6 +28,7 @@
             android:name=".main.beijing.MainProcessDataProvider" />
 
         <service android:name=".main.beijing.MainProcessService" />
+        <service android:name="com.web.god.ipc.server.IpcService" />
 
         <activity android:name=".main.MainActivity" />
         <activity

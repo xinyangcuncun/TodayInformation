@@ -1,0 +1,29 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion Integer.valueOf(compile_sdk_version)
+    buildToolsVersion build_tools_version
+
+    defaultConfig {
+        minSdkVersion Integer.valueOf(min_sdk_version)
+        targetSdkVersion Integer.valueOf(target_sdk_version)
+        versionCode Integer.valueOf(version_code)
+        versionName version_name
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "$support_group:appcompat-v7:$support_version"
+}
