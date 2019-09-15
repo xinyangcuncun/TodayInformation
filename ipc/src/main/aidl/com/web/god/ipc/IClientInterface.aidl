@@ -5,5 +5,4 @@ package com.web.god.ipc;
 
 interface IClientInterface {
    void callBack(String requestKey,String resultStr);
-
 }

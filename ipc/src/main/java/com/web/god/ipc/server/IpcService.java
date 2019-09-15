@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 
 import com.web.god.ipc.IClientInterface;
 import com.web.god.ipc.IServerInterface;
+import com.web.god.ipc.response.ResponseUtil;
 
 /**
  * Created by anson on 2019/8/29.
@@ -24,17 +25,11 @@ public class IpcService extends Service {
 
             @Override
             public void excuteAsync(String requestKey, String requestParmas) throws RemoteException {
-                switch (requestKey) {
-                    case "shanghai_detail":
-                        if (mClientInterface != null) {
-                            mClientInterface.callBack(requestKey,"来自远方的祝福");
-                        }
-                        break;
-                    default:
-                        break;
-                }
+                ResponseUtil.getAsyncResponse(requestKey,requestParmas,mClientInterface);
             }
 
+
+            // TODO: 2019/9/14  反射处理同步的方式 自行完善
             @Override
             public String excuteSync(String requestKey, String requestParmas) throws RemoteException {
                 String result = "";
