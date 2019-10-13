@@ -1,6 +1,11 @@
 package com.news.today.todayinformation.main.beijing;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -18,11 +23,16 @@ import butterknife.BindView;
 public class BeiJingFragment extends BaseFragment {
     @BindView(R.id.bt_paly)
     Button tvClick;
-//    private ProcessDataReceiver processDataReceiver;
+    @BindView(R.id.perimision)
+    Button btClick;
 
     @Override
     public void afterBindView() {
-        mContext.startService(new Intent(mContext,MainProcessService.class));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            mContext.startForegroundService(new Intent(mContext, MainProcessService.class));
+        } else {
+            mContext.startService(new Intent(mContext,MainProcessService.class));
+        }
         tvClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,26 +41,27 @@ public class BeiJingFragment extends BaseFragment {
                 ShanghaiDetailActivity.start_5_0(getActivity(),tvClick);
             }
         });
-//        processDataReceiver = new ProcessDataReceiver();
-//        getActivity().registerReceiver(processDataReceiver, new IntentFilter("shanghai_get_process_data"));
-    }
 
+        btClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    int state = getContext().checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE);
+                    if (state == PackageManager.PERMISSION_GRANTED) {
+                        Log.e("BeiJingFragment", "权限已经申请");
+                    } else {
+                        requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
+                        Log.e("BeiJingFragment", "权限没有申请");
+                    }
+                }
+            }
+        });
+
+    }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mContext.stopService(new Intent(mContext, MainProcessService.class));
-//        getActivity().unregisterReceiver(processDataReceiver);
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        Log.e("BeiJingFragment", grantResults[0] + " ");
     }
-
-//    private class ProcessDataReceiver  extends BroadcastReceiver{
-//
-//        @Override
-//        public void onReceive(Context context, Intent intent) {
-//            String processDec = ProcessDataTest.getIntance().getProcessDec();
-//            Intent postIntent =  new Intent("beijing_post_process_data");
-//            postIntent.putExtra("processDec", processDec);
-//            getActivity().sendBroadcast(postIntent);
-//        }
-//    }
 }

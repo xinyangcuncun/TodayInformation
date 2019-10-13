@@ -12,4 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="200dp" />
 
+    <Button
+        android:text="6.0权限申请"
+        android:layout_gravity="center"
+        android:id="@+id/perimision"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
 </LinearLayout>
