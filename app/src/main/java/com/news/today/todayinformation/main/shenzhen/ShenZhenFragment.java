@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
+import com.web.god.todayinformationndk.MainActivity;
 
 import butterknife.BindView;
 
@@ -20,9 +21,13 @@ public class ShenZhenFragment extends BaseFragment{
     @BindView(R.id.tv_position)
     TextView tvPosition;
 
+    static {
+        System.loadLibrary("native-lib");
+    }
+
     @Override
     public void afterBindView() {
-        tvPosition.setText("深圳");
+        tvPosition.setText(MainActivity.stringFromJNI());
     }
 
     @Override
@@ -63,4 +68,5 @@ public class ShenZhenFragment extends BaseFragment{
 
     //FragmentPagerAdapter 会走 onPause onDestroyView
     //FragmentStatePagerAdapter 会走 onPause onDestroyView onDestroy onDetach
+
 }
