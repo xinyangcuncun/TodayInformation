@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <android.opengl.GLSurfaceView
         android:layout_gravity="center"
-        android:id="@+id/tv_position"
+        android:id="@+id/gl_surface_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

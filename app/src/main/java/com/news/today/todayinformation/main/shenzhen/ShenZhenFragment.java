@@ -1,72 +1,46 @@
 package com.news.today.todayinformation.main.shenzhen;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.util.Log;
-import android.widget.TextView;
+import android.opengl.GLSurfaceView;
 
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
-import com.web.god.todayinformationndk.MainActivity;
+
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.opengles.GL10;
 
 import butterknife.BindView;
 
 /**
  * Created by anson on 2018/11/18.
  */
-@ViewInject(mainlayoutid = R.layout.fragment_others)
+@ViewInject(mainlayoutid = R.layout.fragment_shenzhen)
 public class ShenZhenFragment extends BaseFragment{
-    @BindView(R.id.tv_position)
-    TextView tvPosition;
-
-    static {
-        System.loadLibrary("native-lib");
-    }
+    @BindView(R.id.gl_surface_view)
+    GLSurfaceView glSurfaceView;
 
     @Override
     public void afterBindView() {
-        tvPosition.setText(MainActivity.stringFromJNI());
+        glSurfaceView.setRenderer(new GLSurfaceView.Renderer() {
+            @Override
+            public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+                // 为缓冲区 设置清除颜色的值 相当于初始化
+                gl.glClearColor(0.0f,0.0f,1.0f,1.0f);
+            }
+
+            @Override
+            public void onSurfaceChanged(GL10 gl, int width, int height) {
+                // 设置 视图 大小
+                gl.glViewport(0,0,width,height);
+            }
+
+
+            //绘制的时候 每一帧 都会被系统调用 在Android中 默认最高绘制效率 为 1秒 60帧
+            @Override
+            public void onDrawFrame(GL10 gl) {
+                // 设置色彩
+                gl.glClear(gl.GL_COLOR_BUFFER_BIT);
+            }
+        });
     }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        Log.d("ShenZhenFragment", "onAttach");
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d("ShenZhenFragment", "onCreate");
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        Log.d("ShenZhenFragment", "onPause");
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        Log.d("ShenZhenFragment", "onDestroyView");
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.d("ShenZhenFragment", "onDestroy");
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Log.d("ShenZhenFragment", "onDetach");
-    }
-
-    //FragmentPagerAdapter 会走 onPause onDestroyView
-    //FragmentStatePagerAdapter 会走 onPause onDestroyView onDestroy onDetach
-
 }
