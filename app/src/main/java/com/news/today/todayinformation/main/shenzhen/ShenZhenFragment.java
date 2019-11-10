@@ -5,6 +5,7 @@ import android.opengl.GLSurfaceView;
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
+import com.web.god.opengl.OpenGlManager;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -25,13 +26,15 @@ public class ShenZhenFragment extends BaseFragment{
             @Override
             public void onSurfaceCreated(GL10 gl, EGLConfig config) {
                 // 为缓冲区 设置清除颜色的值 相当于初始化
-                gl.glClearColor(0.0f,0.0f,1.0f,1.0f);
+//                gl.glClearColor(0.0f,0.0f,1.0f,1.0f);
+                OpenGlManager.onSurfaceCreated();
             }
 
             @Override
             public void onSurfaceChanged(GL10 gl, int width, int height) {
                 // 设置 视图 大小
-                gl.glViewport(0,0,width,height);
+//                gl.glViewport(0,0,width,height);
+                OpenGlManager.onSurfaceChanged(width,height);
             }
 
 
@@ -39,7 +42,8 @@ public class ShenZhenFragment extends BaseFragment{
             @Override
             public void onDrawFrame(GL10 gl) {
                 // 设置色彩
-                gl.glClear(gl.GL_COLOR_BUFFER_BIT);
+//                gl.glClear(gl.GL_COLOR_BUFFER_BIT);
+                OpenGlManager.onDrawFrame();
             }
         });
     }
