@@ -35,6 +35,8 @@
         <service android:name="com.web.god.ipc.server.IpcService" />
 
         <activity android:name=".main.MainActivity" />
+        <activity android:name=".main.shenzhen.view.OpenGlActivity" />
+        <activity android:name=".main.shenzhen.view.WebViewActivity" />
         <activity
             android:process=":shanghai.detatil"
             android:name=".main.shanghai.view.ShanghaiDetailActivity" />
