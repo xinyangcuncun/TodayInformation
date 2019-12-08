@@ -1,0 +1,1 @@
+wx.textView('我来自JS脚本')

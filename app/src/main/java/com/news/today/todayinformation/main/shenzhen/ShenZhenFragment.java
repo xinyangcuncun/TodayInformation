@@ -9,6 +9,7 @@ import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
 import com.news.today.todayinformation.main.shenzhen.view.OpenGlActivity;
 import com.news.today.todayinformation.main.shenzhen.view.WebViewActivity;
+import com.news.today.todayinformation.main.shenzhen.view.WeiXinActivity;
 
 import butterknife.BindView;
 
@@ -23,6 +24,9 @@ public class ShenZhenFragment extends BaseFragment{
 
     @BindView(R.id.bt_webview)
     Button webView;
+
+    @BindView(R.id.bt_wx)
+    Button weixin;
 
     @Override
     public void afterBindView() {
@@ -40,7 +44,12 @@ public class ShenZhenFragment extends BaseFragment{
             }
         });
 
-
+        weixin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), WeiXinActivity.class));
+            }
+        });
 
     }
 }
