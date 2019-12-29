@@ -19,4 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="200dp" />
 
+    <Button
+        android:text="Android 安全"
+        android:layout_gravity="center"
+        android:id="@+id/android_safe"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
 </LinearLayout>

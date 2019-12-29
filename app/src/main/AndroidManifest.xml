@@ -38,6 +38,7 @@
         <activity android:name=".main.shenzhen.view.OpenGlActivity" />
         <activity android:name=".main.shenzhen.view.WebViewActivity" />
         <activity android:name=".main.shenzhen.view.WeiXinActivity" />
+        <activity android:name=".main.beijing.view.SafeActivity" />
         <activity
             android:process=":shanghai.detatil"
             android:name=".main.shanghai.view.ShanghaiDetailActivity" />

@@ -12,6 +12,7 @@ import android.widget.Button;
 import com.news.today.todayinformation.R;
 import com.news.today.todayinformation.base.BaseFragment;
 import com.news.today.todayinformation.base.ViewInject;
+import com.news.today.todayinformation.main.beijing.view.SafeActivity;
 import com.news.today.todayinformation.main.shanghai.view.ShanghaiDetailActivity;
 
 import butterknife.BindView;
@@ -25,6 +26,8 @@ public class BeiJingFragment extends BaseFragment {
     Button tvClick;
     @BindView(R.id.perimision)
     Button btClick;
+    @BindView(R.id.android_safe)
+    Button btSafe;
 
     @Override
     public void afterBindView() {
@@ -54,6 +57,13 @@ public class BeiJingFragment extends BaseFragment {
                         Log.e("BeiJingFragment", "权限没有申请");
                     }
                 }
+            }
+        });
+
+        btSafe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getContext(), SafeActivity.class));
             }
         });
 
