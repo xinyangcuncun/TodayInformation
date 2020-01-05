@@ -9,7 +9,7 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
 /**
- * Created by anson on 2019/2/23.
+ * Created by anson on 2019/2/23.  非常不安全的 没有做证书的校验 那么获取的内容 有可能就是被篡改的
  */
 public class Https {
 
@@ -26,6 +26,7 @@ public class Https {
     //获取TrustManager
     private static TrustManager[] getTrustManager() {
         TrustManager[] trustAllCerts = new TrustManager[]{
+                //数字证书 采用的标准 就是 国际统一的 x509协议
                 new X509TrustManager() {
                     @Override
                     public void checkClientTrusted(X509Certificate[] chain, String authType) {

@@ -22,4 +22,13 @@
        android:layout_width="match_parent"
        android:layout_height="50dp" />
 
+   <TextView
+       android:layout_marginTop="10dp"
+       android:background="#2598F403"
+       android:gravity="center"
+       android:id="@+id/tv_aes"
+       android:text="AES对称加密"
+       android:layout_width="match_parent"
+       android:layout_height="50dp" />
+
 </LinearLayout>
