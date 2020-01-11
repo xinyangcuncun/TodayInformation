@@ -61,6 +61,8 @@ public class OkHttpScheduler extends HttpScheduler{
 //            client = new OkHttpClient();
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
             builder.sslSocketFactory(Https.getSSLSocketFactory());
+//            Https2.SSLParams sslSocketFactory = Https2.getSslSocketFactory(null, null, null);
+//            builder.sslSocketFactory(sslSocketFactory.sSLSocketFactory,sslSocketFactory.trustManager);
             builder.hostnameVerifier(new HostnameVerifier() {
                 @Override
                 public boolean verify(String hostname, SSLSession session) {
