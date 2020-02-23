@@ -31,6 +31,9 @@ public class SafeActivity extends BaseActivity {
     @BindView(R.id.tv_aes)
     TextView mTvAes;
 
+    @BindView(R.id.tv_xposed)
+    TextView mTvXposed;
+
     boolean isAdle = true;
 
     @Override
@@ -98,5 +101,16 @@ public class SafeActivity extends BaseActivity {
             }
         });
 
+        mTvXposed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTvXposed.setText(getInfo());
+            }
+        });
+
+    }
+
+    private String getInfo() {
+        return "xposed是我弟弟";
     }
 }
