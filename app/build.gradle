@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.got.plugin'
 
 android {
 
@@ -42,6 +43,13 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+}
+
+//通过插件中的配置  注册想要压缩的文件地址
+tinyInfo{
+    resourcesSrc [
+            'app/src/main/res/mipmap-xxhdpi'
+    ]
 }
 
 dependencies {

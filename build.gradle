@@ -16,6 +16,7 @@ buildscript {
     }
 }
 
+// 实际上是对所有子节点进行配置
 allprojects {
     repositories {
         jcenter()
@@ -30,3 +31,29 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+//task cleanSelf(group : "help"){
+//    //配置阶段
+//    //print("wo shi cleanSelf")
+//    //执行阶段
+//    doLast{
+//        print("wo shi cleanSelf")
+//    }
+//}
+//
+////dependsOn 可以触发依赖的执行顺序
+//task cleanSelf1(group : "help" , dependsOn : cleanSelf) << {
+//    print("wo shi cleanSelf1")
+//}
+//
+////1|dependsOn 执行该脚本时，可以优先执行别的脚本
+////2|在原有Task基础上关联新的逻辑
+//
+//this.project.afterEvaluate {
+//    Task clean = project.tasks.getByName("clean")
+//    if (clean != null) {
+//        clean.doLast {
+//            cleanSelf.execute()
+//        }
+//    }
+//}

@@ -29,7 +29,7 @@
 
         <provider
             android:authorities="com.news.today.process.data"
-            android:name=".main.beijing.MainProcessDataProvider" />
+            android:name=".main.beijing.MainProcessDataProvider" android:exported="false"  />
 
         <service android:name=".main.beijing.MainProcessService" />
         <service android:name="com.web.god.ipc.server.IpcService" />

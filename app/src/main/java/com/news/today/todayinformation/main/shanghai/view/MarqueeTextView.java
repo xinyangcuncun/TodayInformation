@@ -1,15 +1,18 @@
 package com.news.today.todayinformation.main.shanghai.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+
 /**
  * Created by anson on 2019/6/23.
  */
-public class MarqueeTextView extends TextView{
+@SuppressLint("AppCompatCustomView")
+public class MarqueeTextView extends TextView {
 
 
     public MarqueeTextView(Context context) {

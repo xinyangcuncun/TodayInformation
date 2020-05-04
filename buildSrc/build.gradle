@@ -1,0 +1,35 @@
+
+apply plugin: 'groovy'
+
+sourceSets {
+    main{
+        groovy{
+           srcDir('src/main/groovy')
+        }
+
+        resources {
+            srcDir('src/main/resources')
+        }
+    }
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    //https://github.com/tinify/tinify-java
+    implementation'com.tinify:tinify:1.6.2'
+}
+
+//解决找不到tinify的问题
+repositories {
+    jcenter()
+    mavenCentral()
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
+    google()
+}
+
+
+
