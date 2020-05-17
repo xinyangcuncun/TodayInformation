@@ -4,8 +4,10 @@ package com.got.plugin
 class TinyPngInfo {
 
     ArrayList<String> resourcesSrc
+    String apiKey
 //    ArrayList<String> whiteListSrc
     public TinyPngInfo() {
         resourcesSrc = []
+        apiKey = ""
     }
 }

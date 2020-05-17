@@ -47,9 +47,10 @@ android {
 
 //通过插件中的配置  注册想要压缩的文件地址
 tinyInfo{
-    resourcesSrc [
-            'app/src/main/res/mipmap-xxhdpi'
+    resourcesSrc = [
+            'src/main/res/mipmap-xxxhdpi'
     ]
+    apiKey = "wuMdQbCB2D7Qj44dyYcRv1nNHd0N3rYd"
 }
 
 dependencies {
