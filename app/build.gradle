@@ -73,6 +73,7 @@ dependencies {
     implementation project(':task')
     implementation project(':player')
     implementation project(':ipc')
+    implementation project(':plugin')
     implementation 'com.github.xinyangcuncun:GodRefreshLayout:V1.0.0'
     //    implementation project(':refresh')
     //j2v8

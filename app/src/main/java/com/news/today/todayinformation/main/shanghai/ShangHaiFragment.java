@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.news.today.todayinformation.R;
@@ -20,6 +21,8 @@ import com.news.today.todayinformation.base.tools.DoubleClickListener;
 import com.news.today.todayinformation.main.shanghai.adapter.ShanghaiAdapter2;
 import com.news.today.todayinformation.main.shanghai.lf.IPlayerServiceContract;
 import com.news.today.todayinformation.main.shanghai.presenter.PlayerServicePresenter;
+import com.web.god.plugin.GlideApp;
+import com.web.god.plugin.TodayNewsImage;
 
 import butterknife.BindView;
 
@@ -41,6 +44,8 @@ public class ShangHaiFragment extends BaseFragment implements IPlayerServiceCont
     RecyclerView mRecyclerView;
     @BindView(R.id.tv_marquee_title)
     TextView mTvTitle;
+    @BindView(R.id.shanghai_iv_bg)
+    ImageView mIvBg;
     private boolean mIsPlaying;
 
     @Override
@@ -50,8 +55,24 @@ public class ShangHaiFragment extends BaseFragment implements IPlayerServiceCont
 
     @Override
     public void afterBindView() {
+        initView();
         initRecyclerView();
         initListener();
+    }
+
+    private void initView() {
+//        RequestOptions cropOptions = new RequestOptions().centerCrop();
+//        Glide.with(this).
+//                load("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590334586187&di=f47a809e125d25a733d71ca4e7e0c424&imgtype=0&src=http%3A%2F%2Ffile.youboy.com%2Fa%2F105%2F81%2F6%2F2%2F11099982s.jpg").
+//                fitCenter().
+//                placeholder(R.mipmap.shanghai).
+//                apply(cropOptions).
+//                into(mIvBg);
+        TodayNewsImage todayNewsImage = new TodayNewsImage();
+        todayNewsImage.setUrl("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590334586187&di=f47a809e125d25a733d71ca4e7e0c424&imgtype=0&src=http%3A%2F%2Ffile.youboy.com%2Fa%2F105%2F81%2F6%2F2%2F11099982s.jpg");
+        GlideApp.with(this).
+                load(todayNewsImage).todayNews().
+                into(mIvBg);
     }
 
     private void initRecyclerView() {

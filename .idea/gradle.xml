@@ -11,10 +11,12 @@
             <option value="$PROJECT_DIR$/annotation" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/apt" />
+            <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/http" />
             <option value="$PROJECT_DIR$/ipc" />
             <option value="$PROJECT_DIR$/mvp" />
             <option value="$PROJECT_DIR$/player" />
+            <option value="$PROJECT_DIR$/plugin" />
             <option value="$PROJECT_DIR$/refresh" />
             <option value="$PROJECT_DIR$/task" />
           </set>

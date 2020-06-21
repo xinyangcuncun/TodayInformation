@@ -18,10 +18,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
+                android:id="@+id/shanghai_iv_bg"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.6"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/shanghai"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
 
