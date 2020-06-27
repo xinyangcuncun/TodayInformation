@@ -11,7 +11,7 @@ android {
         targetSdkVersion Integer.valueOf(target_sdk_version)
         versionCode Integer.valueOf(version_code)
         versionName version_name
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
@@ -55,10 +55,10 @@ tinyInfo{
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "$support_group:appcompat-v7:$support_version"
-    implementation "$support_group:design:$support_version"
-    implementation "$support_group:cardview-v7:$support_version"
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     // butterknife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'

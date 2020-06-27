@@ -1,6 +1,6 @@
 package com.news.today.todayinformation.main.tools;
 
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 
 import static com.news.today.todayinformation.main.tools.MainConstantTool.BEIJING;
 import static com.news.today.todayinformation.main.tools.MainConstantTool.HANGZHOU;

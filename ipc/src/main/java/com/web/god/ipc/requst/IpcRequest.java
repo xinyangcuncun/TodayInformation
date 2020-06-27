@@ -1,6 +1,6 @@
 package com.web.god.ipc.requst;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.web.god.ipc.CallBack;
 

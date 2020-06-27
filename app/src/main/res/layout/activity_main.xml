@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fac_main_home"
             android:layout_gravity="bottom|right"
             android:layout_marginBottom="@dimen/dp_40"
