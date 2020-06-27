@@ -60,8 +60,8 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     // butterknife
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     //lottie
     implementation 'com.airbnb.android:lottie:2.2.5'
     //apt
@@ -74,6 +74,7 @@ dependencies {
     implementation project(':player')
     implementation project(':ipc')
     implementation project(':plugin')
+    implementation project(':jetpack')
     implementation 'com.github.xinyangcuncun:GodRefreshLayout:V1.0.0'
     //    implementation project(':refresh')
     //j2v8
