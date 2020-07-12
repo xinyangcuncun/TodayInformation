@@ -10,7 +10,7 @@ import com.news.today.todayinformation.base.ViewInject;
 import com.news.today.todayinformation.main.shenzhen.view.OpenGlActivity;
 import com.news.today.todayinformation.main.shenzhen.view.WebViewActivity;
 import com.news.today.todayinformation.main.shenzhen.view.WeiXinActivity;
-import com.web.god.jetpack.LifeCircleActivity;
+import com.web.god.jetpack.navigation.NavigationActivity;
 
 import butterknife.BindView;
 
@@ -58,7 +58,8 @@ public class ShenZhenFragment extends BaseFragment{
         jetPack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), LifeCircleActivity.class));
+//                startActivity(new Intent(getContext(), LifeCircleActivity.class));
+                startActivity(new Intent(getContext(), NavigationActivity.class));
             }
         });
 
