@@ -1,6 +1,10 @@
 apply plugin: 'com.android.library'
 
 android {
+
+    dataBinding {
+        enabled = true
+    }
     compileSdkVersion Integer.valueOf(compile_sdk_version)
 
 

@@ -7,10 +7,12 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.web.god.jetpack.R;
+import com.web.god.jetpack.User;
+import com.web.god.jetpack.databinding.FragmentBlankBinding;
 
 /**
  * Created by anson on 2020-07-12.
@@ -20,13 +22,9 @@ public class BlankFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View viewRoot = inflater.inflate(R.layout.fragment_blank, null);
-        viewRoot.findViewById(R.id.tv_nav).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(BlankFragment.this).navigate(R.id.action_blankFragment_to_blankFragment2);
-            }
-        });
-        return viewRoot;
+        FragmentBlankBinding inflate = DataBindingUtil.inflate(inflater, R.layout.fragment_blank, container, false);
+        final User user = new User("Jeck",20);
+        inflate.setUser(user);
+        return inflate.getRoot();
     }
 }
