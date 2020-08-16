@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="mvvm"
+            type="com.news.today.todayinformation.main.shenzhen.viewmodel.MvvmModel" />
+
+        <variable
+            name="mvvm2"
+            type="com.news.today.todayinformation.main.shenzhen.viewmodel.MvvmModel2" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <TextView
+            android:background="@color/cardview_shadow_start_color"
+            android:onClick="@{mvvm.tvMvvmOnclick}"
+            android:text="@{mvvm.name}"
+            android:id="@+id/tv_mvvm"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+
+        <TextView
+            android:onClick="@{mvvm2.tvMvvmOnclick2}"
+            android:background="@color/cardview_shadow_start_color"
+            android:layout_marginTop="20dp"
+            android:text="@{mvvm2.name2}"
+            android:id="@+id/tv_mvvm2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+    </LinearLayout>
+</layout>
